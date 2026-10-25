@@ -1,0 +1,3930 @@
+{
+ "title": "NVIDIA Jetson Orin (Cortex-A78AE)",
+ "date": "2026-10-30",
+ "size": [
+  2560,
+  1600
+ ],
+ "machine": {
+  "machine": "aarch64",
+  "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.41",
+  "python": "3.12.16",
+  "Vendor ID": "ARM",
+  "Model name": "Cortex-A78AE",
+  "Flags": "fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg",
+  "gcc": "14.2.0",
+  "branch": "simd/pillow-13",
+  "commit": "701d3bdca"
+ },
+ "suites": [
+  {
+   "id": "scale",
+   "title": "Resize",
+   "about": "Convolution resampling of the whole image."
+  },
+  {
+   "id": "reduce",
+   "title": "Reduce",
+   "about": "Integer downscale by box averaging."
+  },
+  {
+   "id": "blur",
+   "title": "Blur",
+   "about": "Gaussian and box blur."
+  },
+  {
+   "id": "filter",
+   "title": "Kernel filters",
+   "about": "3x3 and 5x5 convolution kernels."
+  },
+  {
+   "id": "unsharp",
+   "title": "Unsharp mask",
+   "about": "Sharpening with a Gaussian unsharp mask."
+  },
+  {
+   "id": "rank",
+   "title": "Rank filters",
+   "about": "Median, minimum and maximum filters."
+  },
+  {
+   "id": "convert",
+   "title": "Mode conversion",
+   "about": "Colour space and band conversions."
+  },
+  {
+   "id": "composite",
+   "title": "Composition",
+   "about": "Alpha compositing and blending."
+  },
+  {
+   "id": "transpose",
+   "title": "Flips and right angles",
+   "about": "Lossless flips and rotations."
+  },
+  {
+   "id": "rotate",
+   "title": "Rotation and transforms",
+   "about": "Arbitrary-angle affine and perspective warps."
+  },
+  {
+   "id": "lut",
+   "title": "Colour LUT",
+   "about": "3D colour lookup tables (Color3DLUT)."
+  },
+  {
+   "id": "point",
+   "title": "Point operations",
+   "about": "Per-value lookup tables."
+  },
+  {
+   "id": "chops",
+   "title": "Channel operations",
+   "about": "Pixel-wise arithmetic between two images."
+  },
+  {
+   "id": "stats",
+   "title": "Statistics",
+   "about": "Histograms and extrema."
+  },
+  {
+   "id": "quantize",
+   "title": "Quantization",
+   "about": "Reduction to a 256-colour palette."
+  },
+  {
+   "id": "draw",
+   "title": "Drawing",
+   "about": "Shapes and text on an RGB canvas."
+  },
+  {
+   "id": "codec",
+   "title": "Load and save",
+   "about": "Decoding and encoding in memory."
+  },
+  {
+   "id": "cycle",
+   "title": "Full cycle",
+   "about": "Decode a JPEG, transform it and encode it again."
+  }
+ ],
+ "cases": {
+  "scale/RGB/26x16/bilinear": {
+   "suite": "scale",
+   "title": "RGB to 26x16 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/26x16/bicubic": {
+   "suite": "scale",
+   "title": "RGB to 26x16 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/26x16/lanczos": {
+   "suite": "scale",
+   "title": "RGB to 26x16 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/320x200/bilinear": {
+   "suite": "scale",
+   "title": "RGB to 320x200 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/320x200/bicubic": {
+   "suite": "scale",
+   "title": "RGB to 320x200 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/320x200/lanczos": {
+   "suite": "scale",
+   "title": "RGB to 320x200 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/2048x1280/bilinear": {
+   "suite": "scale",
+   "title": "RGB to 2048x1280 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/2048x1280/bicubic": {
+   "suite": "scale",
+   "title": "RGB to 2048x1280 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/2048x1280/lanczos": {
+   "suite": "scale",
+   "title": "RGB to 2048x1280 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/5478x3424/bilinear": {
+   "suite": "scale",
+   "title": "RGB to 5478x3424 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/5478x3424/bicubic": {
+   "suite": "scale",
+   "title": "RGB to 5478x3424 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGB/5478x3424/lanczos": {
+   "suite": "scale",
+   "title": "RGB to 5478x3424 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/26x16/bilinear": {
+   "suite": "scale",
+   "title": "RGBA to 26x16 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/26x16/bicubic": {
+   "suite": "scale",
+   "title": "RGBA to 26x16 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/26x16/lanczos": {
+   "suite": "scale",
+   "title": "RGBA to 26x16 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/320x200/bilinear": {
+   "suite": "scale",
+   "title": "RGBA to 320x200 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/320x200/bicubic": {
+   "suite": "scale",
+   "title": "RGBA to 320x200 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/320x200/lanczos": {
+   "suite": "scale",
+   "title": "RGBA to 320x200 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/2048x1280/bilinear": {
+   "suite": "scale",
+   "title": "RGBA to 2048x1280 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/2048x1280/bicubic": {
+   "suite": "scale",
+   "title": "RGBA to 2048x1280 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/2048x1280/lanczos": {
+   "suite": "scale",
+   "title": "RGBA to 2048x1280 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/5478x3424/bilinear": {
+   "suite": "scale",
+   "title": "RGBA to 5478x3424 bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/5478x3424/bicubic": {
+   "suite": "scale",
+   "title": "RGBA to 5478x3424 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/RGBA/5478x3424/lanczos": {
+   "suite": "scale",
+   "title": "RGBA to 5478x3424 lanczos",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/L/320x200/bicubic": {
+   "suite": "scale",
+   "title": "L to 320x200 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "scale/L/2048x1280/bicubic": {
+   "suite": "scale",
+   "title": "L to 2048x1280 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "reduce/RGB/2": {
+   "suite": "reduce",
+   "title": "RGB by 2",
+   "work": "mpx",
+   "n": null
+  },
+  "reduce/RGB/4": {
+   "suite": "reduce",
+   "title": "RGB by 4",
+   "work": "mpx",
+   "n": null
+  },
+  "reduce/L/2": {
+   "suite": "reduce",
+   "title": "L by 2",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/gaussian/RGB/1": {
+   "suite": "blur",
+   "title": "Gaussian RGB radius 1",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/gaussian/RGB/10": {
+   "suite": "blur",
+   "title": "Gaussian RGB radius 10",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/gaussian/RGB/30": {
+   "suite": "blur",
+   "title": "Gaussian RGB radius 30",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/gaussian/RGBA/10": {
+   "suite": "blur",
+   "title": "Gaussian RGBA radius 10",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/gaussian/L/10": {
+   "suite": "blur",
+   "title": "Gaussian L radius 10",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/box/RGB/2": {
+   "suite": "blur",
+   "title": "Box RGB radius 2",
+   "work": "mpx",
+   "n": null
+  },
+  "blur/box/RGB/10": {
+   "suite": "blur",
+   "title": "Box RGB radius 10",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/RGB/SMOOTH": {
+   "suite": "filter",
+   "title": "RGB 3x3 SMOOTH",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/RGB/SHARPEN": {
+   "suite": "filter",
+   "title": "RGB 3x3 SHARPEN",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/RGB/EDGE_ENHANCE": {
+   "suite": "filter",
+   "title": "RGB 3x3 EDGE_ENHANCE",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/RGB/FIND_EDGES": {
+   "suite": "filter",
+   "title": "RGB 3x3 FIND_EDGES",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/RGB/SMOOTH_MORE": {
+   "suite": "filter",
+   "title": "RGB 5x5 SMOOTH_MORE",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/L/SHARPEN": {
+   "suite": "filter",
+   "title": "L 3x3 SHARPEN",
+   "work": "mpx",
+   "n": null
+  },
+  "filter/L/SMOOTH_MORE": {
+   "suite": "filter",
+   "title": "L 5x5 SMOOTH_MORE",
+   "work": "mpx",
+   "n": null
+  },
+  "unsharp/RGB": {
+   "suite": "unsharp",
+   "title": "RGB radius 2, 150%, threshold 3",
+   "work": "mpx",
+   "n": null
+  },
+  "unsharp/L": {
+   "suite": "unsharp",
+   "title": "L radius 2, 150%, threshold 3",
+   "work": "mpx",
+   "n": null
+  },
+  "rank/median3/RGB": {
+   "suite": "rank",
+   "title": "Median 3x3 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "rank/median5/RGB": {
+   "suite": "rank",
+   "title": "Median 5x5 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "rank/median3/L": {
+   "suite": "rank",
+   "title": "Median 3x3 L",
+   "work": "mpx",
+   "n": null
+  },
+  "rank/min3/RGB": {
+   "suite": "rank",
+   "title": "Minimum 3x3 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "rank/max3/RGB": {
+   "suite": "rank",
+   "title": "Maximum 3x3 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGB/L": {
+   "suite": "convert",
+   "title": "RGB to L",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGB/RGBA": {
+   "suite": "convert",
+   "title": "RGB to RGBA",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGBA/RGB": {
+   "suite": "convert",
+   "title": "RGBA to RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGBA/RGBa": {
+   "suite": "convert",
+   "title": "RGBA to RGBa",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGBa/RGBA": {
+   "suite": "convert",
+   "title": "RGBa to RGBA",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGB/HSV": {
+   "suite": "convert",
+   "title": "RGB to HSV",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGB/YCbCr": {
+   "suite": "convert",
+   "title": "RGB to YCbCr",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/YCbCr/RGB": {
+   "suite": "convert",
+   "title": "YCbCr to RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/RGB/CMYK": {
+   "suite": "convert",
+   "title": "RGB to CMYK",
+   "work": "mpx",
+   "n": null
+  },
+  "convert/L/RGB": {
+   "suite": "convert",
+   "title": "L to RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "composite/alpha": {
+   "suite": "composite",
+   "title": "RGBA over RGBA (alpha_composite)",
+   "work": "mpx",
+   "n": null
+  },
+  "composite/blend": {
+   "suite": "composite",
+   "title": "Blend two RGB images 50%",
+   "work": "mpx",
+   "n": null
+  },
+  "composite/mask": {
+   "suite": "composite",
+   "title": "RGB with an L mask (composite)",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGB/FLIP_LEFT_RIGHT": {
+   "suite": "transpose",
+   "title": "RGB FLIP_LEFT_RIGHT",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGB/FLIP_TOP_BOTTOM": {
+   "suite": "transpose",
+   "title": "RGB FLIP_TOP_BOTTOM",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGB/ROTATE_90": {
+   "suite": "transpose",
+   "title": "RGB ROTATE_90",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGB/ROTATE_180": {
+   "suite": "transpose",
+   "title": "RGB ROTATE_180",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGB/ROTATE_270": {
+   "suite": "transpose",
+   "title": "RGB ROTATE_270",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGB/TRANSPOSE": {
+   "suite": "transpose",
+   "title": "RGB TRANSPOSE",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/L/ROTATE_90": {
+   "suite": "transpose",
+   "title": "L ROTATE_90",
+   "work": "mpx",
+   "n": null
+  },
+  "transpose/RGBA/ROTATE_90": {
+   "suite": "transpose",
+   "title": "RGBA ROTATE_90",
+   "work": "mpx",
+   "n": null
+  },
+  "rotate/RGB/30/nearest": {
+   "suite": "rotate",
+   "title": "RGB 30 degrees nearest",
+   "work": "mpx",
+   "n": null
+  },
+  "rotate/RGB/30/bilinear": {
+   "suite": "rotate",
+   "title": "RGB 30 degrees bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "rotate/RGB/30/bicubic": {
+   "suite": "rotate",
+   "title": "RGB 30 degrees bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "rotate/RGBA/30/bicubic": {
+   "suite": "rotate",
+   "title": "RGBA 30 degrees bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "rotate/RGB/perspective/bilinear": {
+   "suite": "rotate",
+   "title": "RGB perspective bilinear",
+   "work": "mpx",
+   "n": null
+  },
+  "lut/RGB/4": {
+   "suite": "lut",
+   "title": "RGB, 4\u00b3 table",
+   "work": "mpx",
+   "n": null
+  },
+  "lut/RGB/16": {
+   "suite": "lut",
+   "title": "RGB, 16\u00b3 table",
+   "work": "mpx",
+   "n": null
+  },
+  "lut/RGB/36": {
+   "suite": "lut",
+   "title": "RGB, 36\u00b3 table",
+   "work": "mpx",
+   "n": null
+  },
+  "lut/RGBA/16": {
+   "suite": "lut",
+   "title": "RGBA, 16\u00b3 table",
+   "work": "mpx",
+   "n": null
+  },
+  "point/RGB/table": {
+   "suite": "point",
+   "title": "RGB per-channel table",
+   "work": "mpx",
+   "n": null
+  },
+  "point/RGB/invert": {
+   "suite": "point",
+   "title": "RGB invert",
+   "work": "mpx",
+   "n": null
+  },
+  "point/L/table": {
+   "suite": "point",
+   "title": "L table",
+   "work": "mpx",
+   "n": null
+  },
+  "chops/RGB/multiply": {
+   "suite": "chops",
+   "title": "RGB multiply",
+   "work": "mpx",
+   "n": null
+  },
+  "chops/RGB/screen": {
+   "suite": "chops",
+   "title": "RGB screen",
+   "work": "mpx",
+   "n": null
+  },
+  "chops/RGB/add": {
+   "suite": "chops",
+   "title": "RGB add",
+   "work": "mpx",
+   "n": null
+  },
+  "chops/RGB/difference": {
+   "suite": "chops",
+   "title": "RGB difference",
+   "work": "mpx",
+   "n": null
+  },
+  "chops/RGB/lighter": {
+   "suite": "chops",
+   "title": "RGB lighter",
+   "work": "mpx",
+   "n": null
+  },
+  "stats/histogram/RGB": {
+   "suite": "stats",
+   "title": "Histogram RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "stats/histogram/L": {
+   "suite": "stats",
+   "title": "Histogram L",
+   "work": "mpx",
+   "n": null
+  },
+  "stats/extrema/RGB": {
+   "suite": "stats",
+   "title": "Extrema RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "quantize/mediancut": {
+   "suite": "quantize",
+   "title": "Median cut, 256 colours",
+   "work": "mpx",
+   "n": null
+  },
+  "quantize/fastoctree": {
+   "suite": "quantize",
+   "title": "Fast octree, 256 colours",
+   "work": "mpx",
+   "n": null
+  },
+  "draw/polygons": {
+   "suite": "draw",
+   "title": "200 filled polygons",
+   "work": "shapes",
+   "n": 200
+  },
+  "draw/ellipses": {
+   "suite": "draw",
+   "title": "200 filled ellipses",
+   "work": "shapes",
+   "n": 200
+  },
+  "draw/rectangles": {
+   "suite": "draw",
+   "title": "500 filled rectangles",
+   "work": "shapes",
+   "n": 500
+  },
+  "draw/lines": {
+   "suite": "draw",
+   "title": "500 lines 5px wide",
+   "work": "shapes",
+   "n": 500
+  },
+  "draw/text": {
+   "suite": "draw",
+   "title": "100 lines of text",
+   "work": "lines",
+   "n": 100
+  },
+  "codec/decode/jpeg": {
+   "suite": "codec",
+   "title": "Decode JPEG q85 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "codec/encode/jpeg": {
+   "suite": "codec",
+   "title": "Encode JPEG q85 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "codec/decode/png": {
+   "suite": "codec",
+   "title": "Decode PNG level 6 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "codec/encode/png": {
+   "suite": "codec",
+   "title": "Encode PNG level 6 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "codec/decode/webp": {
+   "suite": "codec",
+   "title": "Decode WebP q80 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "codec/encode/webp": {
+   "suite": "codec",
+   "title": "Encode WebP q80 RGB",
+   "work": "mpx",
+   "n": null
+  },
+  "codec/thumbnail/jpeg": {
+   "suite": "codec",
+   "title": "JPEG to a 320x200 thumbnail",
+   "work": "mpx",
+   "n": null
+  },
+  "cycle/0": {
+   "suite": "cycle",
+   "title": "Load + save",
+   "work": "mpx",
+   "n": null
+  },
+  "cycle/1": {
+   "suite": "cycle",
+   "title": "+ rotate 270",
+   "work": "mpx",
+   "n": null
+  },
+  "cycle/2": {
+   "suite": "cycle",
+   "title": "+ resize 0.4 bicubic",
+   "work": "mpx",
+   "n": null
+  },
+  "cycle/3": {
+   "suite": "cycle",
+   "title": "+ Gaussian blur 4",
+   "work": "mpx",
+   "n": null
+  }
+ },
+ "variants": {
+  "pillow-13.0.0": {
+   "family": "pillow",
+   "version": "13.0.0",
+   "results": {
+    "scale/RGB/26x16/bilinear": {
+     "best": 0.01352854399010539,
+     "median": 0.013552096002968028,
+     "runs": 30
+    },
+    "scale/RGB/26x16/bicubic": {
+     "best": 0.02639024000382051,
+     "median": 0.02641910398961045,
+     "runs": 16
+    },
+    "scale/RGB/26x16/lanczos": {
+     "best": 0.03841244798968546,
+     "median": 0.03853436801000498,
+     "runs": 11
+    },
+    "scale/RGB/320x200/bilinear": {
+     "best": 0.015419967996422201,
+     "median": 0.015474399988306686,
+     "runs": 26
+    },
+    "scale/RGB/320x200/bicubic": {
+     "best": 0.030268255999544635,
+     "median": 0.030319104000227526,
+     "runs": 14
+    },
+    "scale/RGB/320x200/lanczos": {
+     "best": 0.04611622399534099,
+     "median": 0.04625062400009483,
+     "runs": 9
+    },
+    "scale/RGB/2048x1280/bilinear": {
+     "best": 0.038964416016824543,
+     "median": 0.039008255989756435,
+     "runs": 11
+    },
+    "scale/RGB/2048x1280/bicubic": {
+     "best": 0.058571744011715055,
+     "median": 0.05861062399344519,
+     "runs": 7
+    },
+    "scale/RGB/2048x1280/lanczos": {
+     "best": 0.08549100797972642,
+     "median": 0.08550902400747873,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bilinear": {
+     "best": 0.17946643198956735,
+     "median": 0.18132060798234306,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bicubic": {
+     "best": 0.2615267520013731,
+     "median": 0.2617051520210225,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/lanczos": {
+     "best": 0.3490439359738957,
+     "median": 0.3498120000003837,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/bilinear": {
+     "best": 0.02131907199509442,
+     "median": 0.021384960011346266,
+     "runs": 19
+    },
+    "scale/RGBA/26x16/bicubic": {
+     "best": 0.03874691200326197,
+     "median": 0.03887190402019769,
+     "runs": 11
+    },
+    "scale/RGBA/26x16/lanczos": {
+     "best": 0.055377632001182064,
+     "median": 0.0560895039816387,
+     "runs": 8
+    },
+    "scale/RGBA/320x200/bilinear": {
+     "best": 0.024752992001594976,
+     "median": 0.02482339198468253,
+     "runs": 17
+    },
+    "scale/RGBA/320x200/bicubic": {
+     "best": 0.04473766399314627,
+     "median": 0.04482822399586439,
+     "runs": 9
+    },
+    "scale/RGBA/320x200/lanczos": {
+     "best": 0.0656552959990222,
+     "median": 0.06616944001871161,
+     "runs": 7
+    },
+    "scale/RGBA/2048x1280/bilinear": {
+     "best": 0.08195580801111646,
+     "median": 0.0820714239962399,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/bicubic": {
+     "best": 0.11306790402159095,
+     "median": 0.11328364801011048,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/lanczos": {
+     "best": 0.1459695039957296,
+     "median": 0.14609910399303772,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bilinear": {
+     "best": 0.3993442880164366,
+     "median": 0.39958828801172785,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bicubic": {
+     "best": 0.4910533759975806,
+     "median": 0.4923426560126245,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/lanczos": {
+     "best": 0.6154701760096941,
+     "median": 0.6157238080049865,
+     "runs": 5
+    },
+    "scale/L/320x200/bicubic": {
+     "best": 0.011859519989229739,
+     "median": 0.011956031987210736,
+     "runs": 34
+    },
+    "scale/L/2048x1280/bicubic": {
+     "best": 0.027451871981611475,
+     "median": 0.027526879974175245,
+     "runs": 15
+    },
+    "reduce/RGB/2": {
+     "best": 0.0057257600128650665,
+     "median": 0.005748288007453084,
+     "runs": 70
+    },
+    "reduce/RGB/4": {
+     "best": 0.004448320018127561,
+     "median": 0.004457856004592031,
+     "runs": 90
+    },
+    "reduce/L/2": {
+     "best": 0.0023671360104344785,
+     "median": 0.002380576013820246,
+     "runs": 168
+    },
+    "blur/gaussian/RGB/1": {
+     "best": 0.15878649600199424,
+     "median": 0.15904620799119584,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/10": {
+     "best": 0.15874595200875774,
+     "median": 0.15879305600537919,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/30": {
+     "best": 0.1588749120128341,
+     "median": 0.15907555201556534,
+     "runs": 5
+    },
+    "blur/gaussian/RGBA/10": {
+     "best": 0.15867039997829124,
+     "median": 0.15873548801755533,
+     "runs": 5
+    },
+    "blur/gaussian/L/10": {
+     "best": 0.053550528013147414,
+     "median": 0.053632736002327874,
+     "runs": 8
+    },
+    "blur/box/RGB/2": {
+     "best": 0.06174371199449524,
+     "median": 0.06181292800465599,
+     "runs": 7
+    },
+    "blur/box/RGB/10": {
+     "best": 0.06160054399515502,
+     "median": 0.06176956801209599,
+     "runs": 7
+    },
+    "filter/RGB/SMOOTH": {
+     "best": 0.09819212800357491,
+     "median": 0.09821507200831547,
+     "runs": 5
+    },
+    "filter/RGB/SHARPEN": {
+     "best": 0.09902073600096628,
+     "median": 0.09904175999690779,
+     "runs": 5
+    },
+    "filter/RGB/EDGE_ENHANCE": {
+     "best": 0.10042035198421218,
+     "median": 0.10044281600858085,
+     "runs": 5
+    },
+    "filter/RGB/FIND_EDGES": {
+     "best": 0.14513088000239804,
+     "median": 0.14523459199699573,
+     "runs": 5
+    },
+    "filter/RGB/SMOOTH_MORE": {
+     "best": 0.22725663997698575,
+     "median": 0.22728291200473905,
+     "runs": 5
+    },
+    "filter/L/SHARPEN": {
+     "best": 0.03307062399107963,
+     "median": 0.0331210239965003,
+     "runs": 13
+    },
+    "filter/L/SMOOTH_MORE": {
+     "best": 0.07513673600624315,
+     "median": 0.07515388799947686,
+     "runs": 6
+    },
+    "unsharp/RGB": {
+     "best": 0.23556348800775595,
+     "median": 0.23569561599288136,
+     "runs": 5
+    },
+    "unsharp/L": {
+     "best": 0.07040176002192311,
+     "median": 0.07066464002127759,
+     "runs": 6
+    },
+    "rank/median3/RGB": {
+     "best": 1.2626755200035404,
+     "median": 1.2651905280072242,
+     "runs": 4
+    },
+    "rank/median5/RGB": {
+     "best": 3.9361276480194647,
+     "median": 3.9367960639938246,
+     "runs": 3
+    },
+    "rank/median3/L": {
+     "best": 0.41075971198733896,
+     "median": 0.4109177920036018,
+     "runs": 5
+    },
+    "rank/min3/RGB": {
+     "best": 0.8849623359856196,
+     "median": 0.8862105279986281,
+     "runs": 5
+    },
+    "rank/max3/RGB": {
+     "best": 0.881716031988617,
+     "median": 0.882204512017779,
+     "runs": 5
+    },
+    "convert/RGB/L": {
+     "best": 0.0025488960091024637,
+     "median": 0.0025614399928599596,
+     "runs": 157
+    },
+    "convert/RGB/RGBA": {
+     "best": 0.0017299519968219101,
+     "median": 0.0017858560022432357,
+     "runs": 222
+    },
+    "convert/RGBA/RGB": {
+     "best": 0.001731839991407469,
+     "median": 0.0017549439799040556,
+     "runs": 228
+    },
+    "convert/RGBA/RGBa": {
+     "best": 0.0034164479875471443,
+     "median": 0.003440544009208679,
+     "runs": 116
+    },
+    "convert/RGBa/RGBA": {
+     "best": 0.038853952020872384,
+     "median": 0.038874464022228494,
+     "runs": 11
+    },
+    "convert/RGB/HSV": {
+     "best": 0.08135244800359942,
+     "median": 0.08136313600698486,
+     "runs": 5
+    },
+    "convert/RGB/YCbCr": {
+     "best": 0.019312447984702885,
+     "median": 0.019343904015840963,
+     "runs": 21
+    },
+    "convert/YCbCr/RGB": {
+     "best": 0.014452000003075227,
+     "median": 0.014485696010524407,
+     "runs": 28
+    },
+    "convert/RGB/CMYK": {
+     "best": 0.0017410560103598982,
+     "median": 0.001769664027960971,
+     "runs": 226
+    },
+    "convert/L/RGB": {
+     "best": 0.0009231040021404624,
+     "median": 0.0009288000001106411,
+     "runs": 429
+    },
+    "composite/alpha": {
+     "best": 0.022081824019551277,
+     "median": 0.02209593600127846,
+     "runs": 19
+    },
+    "composite/blend": {
+     "best": 0.01294934400357306,
+     "median": 0.012967583985300735,
+     "runs": 31
+    },
+    "composite/mask": {
+     "best": 0.011074815993197262,
+     "median": 0.011113183980342,
+     "runs": 36
+    },
+    "transpose/RGB/FLIP_LEFT_RIGHT": {
+     "best": 0.002118431992130354,
+     "median": 0.002137887990102172,
+     "runs": 188
+    },
+    "transpose/RGB/FLIP_TOP_BOTTOM": {
+     "best": 0.0017572480137459934,
+     "median": 0.0017978560063056648,
+     "runs": 223
+    },
+    "transpose/RGB/ROTATE_90": {
+     "best": 0.005823487997986376,
+     "median": 0.005925824021687731,
+     "runs": 68
+    },
+    "transpose/RGB/ROTATE_180": {
+     "best": 0.0021061120205558836,
+     "median": 0.0021249599813017994,
+     "runs": 189
+    },
+    "transpose/RGB/ROTATE_270": {
+     "best": 0.007522816013079137,
+     "median": 0.007545119995484129,
+     "runs": 53
+    },
+    "transpose/RGB/TRANSPOSE": {
+     "best": 0.0060112640203442425,
+     "median": 0.006117727985838428,
+     "runs": 66
+    },
+    "transpose/L/ROTATE_90": {
+     "best": 0.005296448012813926,
+     "median": 0.005319136020261794,
+     "runs": 75
+    },
+    "transpose/RGBA/ROTATE_90": {
+     "best": 0.005841087986482307,
+     "median": 0.00591423999867402,
+     "runs": 68
+    },
+    "rotate/RGB/30/nearest": {
+     "best": 0.039641631999984384,
+     "median": 0.04001737601356581,
+     "runs": 10
+    },
+    "rotate/RGB/30/bilinear": {
+     "best": 0.12676217599073425,
+     "median": 0.12721721598063596,
+     "runs": 5
+    },
+    "rotate/RGB/30/bicubic": {
+     "best": 0.2907542719913181,
+     "median": 0.29198339200229384,
+     "runs": 5
+    },
+    "rotate/RGBA/30/bicubic": {
+     "best": 0.3863970559905283,
+     "median": 0.38687574400682934,
+     "runs": 5
+    },
+    "rotate/RGB/perspective/bilinear": {
+     "best": 0.14656649599783123,
+     "median": 0.14660825597820804,
+     "runs": 5
+    },
+    "lut/RGB/4": {
+     "best": 0.10194143999251537,
+     "median": 0.10202780799590982,
+     "runs": 5
+    },
+    "lut/RGB/16": {
+     "best": 0.1030926080129575,
+     "median": 0.10318851200281642,
+     "runs": 5
+    },
+    "lut/RGB/36": {
+     "best": 0.11302281598909758,
+     "median": 0.1130489599891007,
+     "runs": 5
+    },
+    "lut/RGBA/16": {
+     "best": 0.11859635199652985,
+     "median": 0.11880681599723175,
+     "runs": 5
+    },
+    "point/RGB/table": {
+     "best": 0.009876736003207043,
+     "median": 0.00990819200524129,
+     "runs": 41
+    },
+    "point/RGB/invert": {
+     "best": 0.009884576022159308,
+     "median": 0.00992767998832278,
+     "runs": 41
+    },
+    "point/L/table": {
+     "best": 0.0036983040045015514,
+     "median": 0.00372172798961401,
+     "runs": 108
+    },
+    "chops/RGB/multiply": {
+     "best": 0.013999808026710525,
+     "median": 0.014014624000992626,
+     "runs": 29
+    },
+    "chops/RGB/screen": {
+     "best": 0.01778505599941127,
+     "median": 0.017800671979784966,
+     "runs": 23
+    },
+    "chops/RGB/add": {
+     "best": 0.015553088014712557,
+     "median": 0.01556220802012831,
+     "runs": 26
+    },
+    "chops/RGB/difference": {
+     "best": 0.0030866239976603538,
+     "median": 0.003137184015940875,
+     "runs": 127
+    },
+    "chops/RGB/lighter": {
+     "best": 0.006411647977074608,
+     "median": 0.006443775986554101,
+     "runs": 63
+    },
+    "stats/histogram/RGB": {
+     "best": 0.009412256011273712,
+     "median": 0.009422496019396931,
+     "runs": 43
+    },
+    "stats/histogram/L": {
+     "best": 0.003623167984187603,
+     "median": 0.003646431985544041,
+     "runs": 110
+    },
+    "stats/extrema/RGB": {
+     "best": 0.004135775991016999,
+     "median": 0.0041941119998227805,
+     "runs": 95
+    },
+    "quantize/mediancut": {
+     "best": 5.900536959990859,
+     "median": 5.95394713600399,
+     "runs": 3
+    },
+    "quantize/fastoctree": {
+     "best": 0.04220240001450293,
+     "median": 0.04240358399692923,
+     "runs": 10
+    },
+    "draw/polygons": {
+     "best": 0.08886704000178725,
+     "median": 0.0898535359883681,
+     "runs": 5
+    },
+    "draw/ellipses": {
+     "best": 0.006122783990576863,
+     "median": 0.006183232006151229,
+     "runs": 65
+    },
+    "draw/rectangles": {
+     "best": 0.011709663987858221,
+     "median": 0.011753408005461097,
+     "runs": 34
+    },
+    "draw/lines": {
+     "best": 0.005628031998639926,
+     "median": 0.0056678400142118335,
+     "runs": 71
+    },
+    "draw/text": {
+     "best": 0.113464288006071,
+     "median": 0.11382409601355903,
+     "runs": 5
+    },
+    "codec/decode/jpeg": {
+     "best": 0.02831740799592808,
+     "median": 0.028405695979017764,
+     "runs": 15
+    },
+    "codec/encode/jpeg": {
+     "best": 0.027540383976884186,
+     "median": 0.027703039988409728,
+     "runs": 15
+    },
+    "codec/decode/png": {
+     "best": 0.10983526398194954,
+     "median": 0.11005251199821942,
+     "runs": 5
+    },
+    "codec/encode/png": {
+     "best": 1.0228487679851241,
+     "median": 1.0235068479960319,
+     "runs": 4
+    },
+    "codec/decode/webp": {
+     "best": 0.10019539200584404,
+     "median": 0.10019763198215514,
+     "runs": 5
+    },
+    "codec/encode/webp": {
+     "best": 0.7037421760032885,
+     "median": 0.7044251520128455,
+     "runs": 5
+    },
+    "codec/thumbnail/jpeg": {
+     "best": 4.1696010157465935e-05,
+     "median": 4.278399865143001e-05,
+     "runs": 9268
+    },
+    "cycle/0": {
+     "best": 0.058953887986717746,
+     "median": 0.05903878397657536,
+     "runs": 7
+    },
+    "cycle/1": {
+     "best": 0.06666249601403251,
+     "median": 0.0667905279842671,
+     "runs": 6
+    },
+    "cycle/2": {
+     "best": 0.083436448010616,
+     "median": 0.08351913600927219,
+     "runs": 5
+    },
+    "cycle/3": {
+     "best": 0.10853289600345306,
+     "median": 0.10865475199534558,
+     "runs": 5
+    }
+   },
+   "notes": {},
+   "errors": {}
+  },
+  "branch-scalar": {
+   "family": "pillow",
+   "version": "13.0.0.post0",
+   "results": {
+    "scale/RGB/26x16/bilinear": {
+     "best": 0.01706844801083207,
+     "median": 0.017107072024373338,
+     "runs": 24
+    },
+    "scale/RGB/26x16/bicubic": {
+     "best": 0.03364832000806928,
+     "median": 0.034015455981716514,
+     "runs": 12
+    },
+    "scale/RGB/26x16/lanczos": {
+     "best": 0.049458560009952635,
+     "median": 0.05059120000805706,
+     "runs": 8
+    },
+    "scale/RGB/320x200/bilinear": {
+     "best": 0.018804447987349704,
+     "median": 0.018822208017809317,
+     "runs": 22
+    },
+    "scale/RGB/320x200/bicubic": {
+     "best": 0.03614223998738453,
+     "median": 0.03616143998806365,
+     "runs": 12
+    },
+    "scale/RGB/320x200/lanczos": {
+     "best": 0.05418243200983852,
+     "median": 0.054333535983460024,
+     "runs": 8
+    },
+    "scale/RGB/2048x1280/bilinear": {
+     "best": 0.03809257599641569,
+     "median": 0.0381623359862715,
+     "runs": 11
+    },
+    "scale/RGB/2048x1280/bicubic": {
+     "best": 0.05878387199481949,
+     "median": 0.058810880000237375,
+     "runs": 7
+    },
+    "scale/RGB/2048x1280/lanczos": {
+     "best": 0.08059212798252702,
+     "median": 0.08065388799877837,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bilinear": {
+     "best": 0.16275209601735696,
+     "median": 0.164383680006722,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bicubic": {
+     "best": 0.22356985599617474,
+     "median": 0.22404566401382908,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/lanczos": {
+     "best": 0.28350259200669825,
+     "median": 0.28363647998776287,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/bilinear": {
+     "best": 0.02764243198907934,
+     "median": 0.027723072009393945,
+     "runs": 15
+    },
+    "scale/RGBA/26x16/bicubic": {
+     "best": 0.0439364799822215,
+     "median": 0.04426908798632212,
+     "runs": 10
+    },
+    "scale/RGBA/26x16/lanczos": {
+     "best": 0.05958444799762219,
+     "median": 0.06076668799505569,
+     "runs": 7
+    },
+    "scale/RGBA/320x200/bilinear": {
+     "best": 0.030068352003581822,
+     "median": 0.03008739202050492,
+     "runs": 14
+    },
+    "scale/RGBA/320x200/bicubic": {
+     "best": 0.04741225598263554,
+     "median": 0.04745852801715955,
+     "runs": 9
+    },
+    "scale/RGBA/320x200/lanczos": {
+     "best": 0.06547836802201346,
+     "median": 0.06559996798750944,
+     "runs": 7
+    },
+    "scale/RGBA/2048x1280/bilinear": {
+     "best": 0.0808715200109873,
+     "median": 0.08100460801506415,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/bicubic": {
+     "best": 0.1017514880222734,
+     "median": 0.10182700800942257,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/lanczos": {
+     "best": 0.1236876159964595,
+     "median": 0.12377769601880573,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bilinear": {
+     "best": 0.3595913280150853,
+     "median": 0.35976419199141674,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bicubic": {
+     "best": 0.4192001280025579,
+     "median": 0.4194701439992059,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/lanczos": {
+     "best": 0.4803077760152519,
+     "median": 0.48079004799365066,
+     "runs": 5
+    },
+    "scale/L/320x200/bicubic": {
+     "best": 0.010441727994475514,
+     "median": 0.010463263985002413,
+     "runs": 39
+    },
+    "scale/L/2048x1280/bicubic": {
+     "best": 0.018501856015063822,
+     "median": 0.018536896008299664,
+     "runs": 22
+    },
+    "reduce/RGB/2": {
+     "best": 0.005724287999328226,
+     "median": 0.00575219199527055,
+     "runs": 70
+    },
+    "reduce/RGB/4": {
+     "best": 0.004451328015420586,
+     "median": 0.004482079995796084,
+     "runs": 90
+    },
+    "reduce/L/2": {
+     "best": 0.0023262080212589353,
+     "median": 0.002342431980650872,
+     "runs": 171
+    },
+    "blur/gaussian/RGB/1": {
+     "best": 0.0949233919964172,
+     "median": 0.09493337600724772,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/10": {
+     "best": 0.1072684160026256,
+     "median": 0.10739145599654876,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/30": {
+     "best": 0.10738326399587095,
+     "median": 0.10741849598707631,
+     "runs": 5
+    },
+    "blur/gaussian/RGBA/10": {
+     "best": 0.10723267201683484,
+     "median": 0.107257823983673,
+     "runs": 5
+    },
+    "blur/gaussian/L/10": {
+     "best": 0.028525664005428553,
+     "median": 0.028645120008150116,
+     "runs": 14
+    },
+    "blur/box/RGB/2": {
+     "best": 0.03552236800896935,
+     "median": 0.035539872013032436,
+     "runs": 12
+    },
+    "blur/box/RGB/10": {
+     "best": 0.035521248006261885,
+     "median": 0.03554246400017291,
+     "runs": 12
+    },
+    "filter/RGB/SMOOTH": {
+     "best": 0.09836515202187002,
+     "median": 0.09839900801307522,
+     "runs": 5
+    },
+    "filter/RGB/SHARPEN": {
+     "best": 0.09908825598540716,
+     "median": 0.09919081599218771,
+     "runs": 5
+    },
+    "filter/RGB/EDGE_ENHANCE": {
+     "best": 0.10047164800926112,
+     "median": 0.10049743999843486,
+     "runs": 5
+    },
+    "filter/RGB/FIND_EDGES": {
+     "best": 0.14516700801323168,
+     "median": 0.14532675201189704,
+     "runs": 5
+    },
+    "filter/RGB/SMOOTH_MORE": {
+     "best": 0.22729820798849687,
+     "median": 0.22744118398986757,
+     "runs": 5
+    },
+    "filter/L/SHARPEN": {
+     "best": 0.03305040000122972,
+     "median": 0.03309523200732656,
+     "runs": 13
+    },
+    "filter/L/SMOOTH_MORE": {
+     "best": 0.0751488959940616,
+     "median": 0.07518268798594363,
+     "runs": 6
+    },
+    "unsharp/RGB": {
+     "best": 0.13465155198355205,
+     "median": 0.1347808639984578,
+     "runs": 5
+    },
+    "unsharp/L": {
+     "best": 0.035312160005560145,
+     "median": 0.035375584004214033,
+     "runs": 12
+    },
+    "rank/median3/RGB": {
+     "best": 0.024719295994145796,
+     "median": 0.02484812799957581,
+     "runs": 17
+    },
+    "rank/median5/RGB": {
+     "best": 0.0896489919978194,
+     "median": 0.08969996799714863,
+     "runs": 5
+    },
+    "rank/median3/L": {
+     "best": 0.005996672000037506,
+     "median": 0.006016767991241068,
+     "runs": 67
+    },
+    "rank/min3/RGB": {
+     "best": 0.030533024022588506,
+     "median": 0.03066787199350074,
+     "runs": 14
+    },
+    "rank/max3/RGB": {
+     "best": 0.03034348800429143,
+     "median": 0.030395264009712264,
+     "runs": 14
+    },
+    "convert/RGB/L": {
+     "best": 0.0025485439982730895,
+     "median": 0.0025604480179026723,
+     "runs": 157
+    },
+    "convert/RGB/RGBA": {
+     "best": 0.0017290239920839667,
+     "median": 0.0017642559832893312,
+     "runs": 226
+    },
+    "convert/RGBA/RGB": {
+     "best": 0.0017328000103589147,
+     "median": 0.0017769279947970062,
+     "runs": 225
+    },
+    "convert/RGBA/RGBa": {
+     "best": 0.01056915201479569,
+     "median": 0.010580639995168895,
+     "runs": 38
+    },
+    "convert/RGBa/RGBA": {
+     "best": 0.03883401598432101,
+     "median": 0.038862304005306214,
+     "runs": 11
+    },
+    "convert/RGB/HSV": {
+     "best": 0.05023670400260016,
+     "median": 0.05024752000463195,
+     "runs": 8
+    },
+    "convert/RGB/YCbCr": {
+     "best": 0.019281952001620084,
+     "median": 0.019329311995534226,
+     "runs": 21
+    },
+    "convert/YCbCr/RGB": {
+     "best": 0.014412255986826494,
+     "median": 0.01442508798209019,
+     "runs": 28
+    },
+    "convert/RGB/CMYK": {
+     "best": 0.001741439977195114,
+     "median": 0.0017742080090101808,
+     "runs": 226
+    },
+    "convert/L/RGB": {
+     "best": 0.0009216640028171241,
+     "median": 0.0009266879933420569,
+     "runs": 430
+    },
+    "composite/alpha": {
+     "best": 0.021964415995171294,
+     "median": 0.021988159976899624,
+     "runs": 19
+    },
+    "composite/blend": {
+     "best": 0.01297894402523525,
+     "median": 0.013009791990043595,
+     "runs": 31
+    },
+    "composite/mask": {
+     "best": 0.011081983975600451,
+     "median": 0.011101248004706576,
+     "runs": 37
+    },
+    "transpose/RGB/FLIP_LEFT_RIGHT": {
+     "best": 0.002118592004990205,
+     "median": 0.002138528012437746,
+     "runs": 186
+    },
+    "transpose/RGB/FLIP_TOP_BOTTOM": {
+     "best": 0.0017143359873443842,
+     "median": 0.0019436480069998652,
+     "runs": 210
+    },
+    "transpose/RGB/ROTATE_90": {
+     "best": 0.006731392000801861,
+     "median": 0.006824607989983633,
+     "runs": 59
+    },
+    "transpose/RGB/ROTATE_180": {
+     "best": 0.002110720000928268,
+     "median": 0.0021289279975462705,
+     "runs": 188
+    },
+    "transpose/RGB/ROTATE_270": {
+     "best": 0.008836480003083125,
+     "median": 0.009214624005835503,
+     "runs": 44
+    },
+    "transpose/RGB/TRANSPOSE": {
+     "best": 0.006814175983890891,
+     "median": 0.006968255998799577,
+     "runs": 57
+    },
+    "transpose/L/ROTATE_90": {
+     "best": 0.005336383997928351,
+     "median": 0.005349312006728724,
+     "runs": 75
+    },
+    "transpose/RGBA/ROTATE_90": {
+     "best": 0.006743936013663188,
+     "median": 0.006804672011639923,
+     "runs": 59
+    },
+    "rotate/RGB/30/nearest": {
+     "best": 0.018122239998774603,
+     "median": 0.01832556800218299,
+     "runs": 22
+    },
+    "rotate/RGB/30/bilinear": {
+     "best": 0.11062972800573334,
+     "median": 0.11092473598546349,
+     "runs": 5
+    },
+    "rotate/RGB/30/bicubic": {
+     "best": 0.2673324479837902,
+     "median": 0.267416160000721,
+     "runs": 5
+    },
+    "rotate/RGBA/30/bicubic": {
+     "best": 0.37427091199788265,
+     "median": 0.3745317439897917,
+     "runs": 5
+    },
+    "rotate/RGB/perspective/bilinear": {
+     "best": 0.1506484159908723,
+     "median": 0.151772159995744,
+     "runs": 5
+    },
+    "lut/RGB/4": {
+     "best": 0.10239305600407533,
+     "median": 0.10243017598986626,
+     "runs": 5
+    },
+    "lut/RGB/16": {
+     "best": 0.10278902397840284,
+     "median": 0.1030238080129493,
+     "runs": 5
+    },
+    "lut/RGB/36": {
+     "best": 0.11279523200937547,
+     "median": 0.11282630398636684,
+     "runs": 5
+    },
+    "lut/RGBA/16": {
+     "best": 0.11741763199097477,
+     "median": 0.1175543999997899,
+     "runs": 5
+    },
+    "point/RGB/table": {
+     "best": 0.010042303998488933,
+     "median": 0.010205088008660823,
+     "runs": 40
+    },
+    "point/RGB/invert": {
+     "best": 0.0018705279799178243,
+     "median": 0.001919232017826289,
+     "runs": 206
+    },
+    "point/L/table": {
+     "best": 0.00355718401260674,
+     "median": 0.0035764799977187067,
+     "runs": 112
+    },
+    "chops/RGB/multiply": {
+     "best": 0.003509247995680198,
+     "median": 0.00353945599636063,
+     "runs": 113
+    },
+    "chops/RGB/screen": {
+     "best": 0.003507296001771465,
+     "median": 0.0035213119990658015,
+     "runs": 114
+    },
+    "chops/RGB/add": {
+     "best": 0.015579295984935015,
+     "median": 0.015589632006594911,
+     "runs": 26
+    },
+    "chops/RGB/difference": {
+     "best": 0.003107872005784884,
+     "median": 0.0031546239915769547,
+     "runs": 127
+    },
+    "chops/RGB/lighter": {
+     "best": 0.006475520000094548,
+     "median": 0.006512799998745322,
+     "runs": 62
+    },
+    "stats/histogram/RGB": {
+     "best": 0.00941017601871863,
+     "median": 0.009425727999769151,
+     "runs": 43
+    },
+    "stats/histogram/L": {
+     "best": 0.0036299200146459043,
+     "median": 0.003639456001110375,
+     "runs": 110
+    },
+    "stats/extrema/RGB": {
+     "best": 0.0042669760005082935,
+     "median": 0.004317888000514358,
+     "runs": 91
+    },
+    "quantize/mediancut": {
+     "best": 1.0947321919957176,
+     "median": 1.1305447039776482,
+     "runs": 4
+    },
+    "quantize/fastoctree": {
+     "best": 0.042191360000288114,
+     "median": 0.042395039985422045,
+     "runs": 10
+    },
+    "draw/polygons": {
+     "best": 0.06421462399885058,
+     "median": 0.06454054400091991,
+     "runs": 7
+    },
+    "draw/ellipses": {
+     "best": 0.006037151993950829,
+     "median": 0.006082175998017192,
+     "runs": 66
+    },
+    "draw/rectangles": {
+     "best": 0.00962966401129961,
+     "median": 0.009672640007920563,
+     "runs": 42
+    },
+    "draw/lines": {
+     "best": 0.005593696027062833,
+     "median": 0.005627776001347229,
+     "runs": 71
+    },
+    "draw/text": {
+     "best": 0.03285251199849881,
+     "median": 0.03297731198836118,
+     "runs": 13
+    },
+    "codec/decode/jpeg": {
+     "best": 0.028512799995951355,
+     "median": 0.028551519993925467,
+     "runs": 15
+    },
+    "codec/encode/jpeg": {
+     "best": 0.02772608000668697,
+     "median": 0.027793663990451023,
+     "runs": 15
+    },
+    "codec/decode/png": {
+     "best": 0.10962236800696701,
+     "median": 0.10966028799884953,
+     "runs": 5
+    },
+    "codec/encode/png": {
+     "best": 0.8731884479930159,
+     "median": 0.8734836479998194,
+     "runs": 5
+    },
+    "codec/decode/webp": {
+     "best": 0.10722889599855989,
+     "median": 0.10734080002293922,
+     "runs": 5
+    },
+    "codec/encode/webp": {
+     "best": 0.7355895680084359,
+     "median": 0.7357407039962709,
+     "runs": 5
+    },
+    "codec/thumbnail/jpeg": {
+     "best": 4.134399932809174e-05,
+     "median": 4.2368017602711916e-05,
+     "runs": 9349
+    },
+    "cycle/0": {
+     "best": 0.059535103995585814,
+     "median": 0.05962233597529121,
+     "runs": 7
+    },
+    "cycle/1": {
+     "best": 0.06765545599046163,
+     "median": 0.0679045119904913,
+     "runs": 6
+    },
+    "cycle/2": {
+     "best": 0.08781494401046075,
+     "median": 0.08789113597595133,
+     "runs": 5
+    },
+    "cycle/3": {
+     "best": 0.10487424000166357,
+     "median": 0.10517875198274851,
+     "runs": 5
+    }
+   },
+   "notes": {},
+   "errors": {}
+  },
+  "branch-neon": {
+   "family": "pillow",
+   "version": "13.0.0.post0",
+   "results": {
+    "scale/RGB/26x16/bilinear": {
+     "best": 0.005131840007379651,
+     "median": 0.00515951999113895,
+     "runs": 78
+    },
+    "scale/RGB/26x16/bicubic": {
+     "best": 0.010032863996457309,
+     "median": 0.010063296009320766,
+     "runs": 40
+    },
+    "scale/RGB/26x16/lanczos": {
+     "best": 0.015235615981509909,
+     "median": 0.015328864014009014,
+     "runs": 27
+    },
+    "scale/RGB/320x200/bilinear": {
+     "best": 0.006557855987921357,
+     "median": 0.006591487996047363,
+     "runs": 61
+    },
+    "scale/RGB/320x200/bicubic": {
+     "best": 0.012188416003482416,
+     "median": 0.012247872014995664,
+     "runs": 33
+    },
+    "scale/RGB/320x200/lanczos": {
+     "best": 0.018148895993363112,
+     "median": 0.01821071997983381,
+     "runs": 22
+    },
+    "scale/RGB/2048x1280/bilinear": {
+     "best": 0.019864352012518793,
+     "median": 0.01992777598206885,
+     "runs": 20
+    },
+    "scale/RGB/2048x1280/bicubic": {
+     "best": 0.029097152000758797,
+     "median": 0.029147040011594072,
+     "runs": 14
+    },
+    "scale/RGB/2048x1280/lanczos": {
+     "best": 0.03838595197885297,
+     "median": 0.03845772799104452,
+     "runs": 11
+    },
+    "scale/RGB/5478x3424/bilinear": {
+     "best": 0.0927780799975153,
+     "median": 0.0947191360173747,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bicubic": {
+     "best": 0.1285696320119314,
+     "median": 0.12859744002344087,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/lanczos": {
+     "best": 0.165892128017731,
+     "median": 0.16609046401572414,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/bilinear": {
+     "best": 0.00824476801790297,
+     "median": 0.008289696008432657,
+     "runs": 49
+    },
+    "scale/RGBA/26x16/bicubic": {
+     "best": 0.012994720018468797,
+     "median": 0.013047200016444549,
+     "runs": 31
+    },
+    "scale/RGBA/26x16/lanczos": {
+     "best": 0.018095615989295766,
+     "median": 0.018206495995400473,
+     "runs": 22
+    },
+    "scale/RGBA/320x200/bilinear": {
+     "best": 0.009866847976809368,
+     "median": 0.009894527989672497,
+     "runs": 41
+    },
+    "scale/RGBA/320x200/bicubic": {
+     "best": 0.01539504001266323,
+     "median": 0.015463296003872529,
+     "runs": 26
+    },
+    "scale/RGBA/320x200/lanczos": {
+     "best": 0.021537344000535086,
+     "median": 0.021595104015432298,
+     "runs": 19
+    },
+    "scale/RGBA/2048x1280/bilinear": {
+     "best": 0.037310079991584644,
+     "median": 0.0374434560071677,
+     "runs": 11
+    },
+    "scale/RGBA/2048x1280/bicubic": {
+     "best": 0.046749856002861634,
+     "median": 0.04678281600354239,
+     "runs": 9
+    },
+    "scale/RGBA/2048x1280/lanczos": {
+     "best": 0.05626755199045874,
+     "median": 0.05637414398370311,
+     "runs": 8
+    },
+    "scale/RGBA/5478x3424/bilinear": {
+     "best": 0.15390822401968762,
+     "median": 0.1539428159885574,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bicubic": {
+     "best": 0.19073212801595218,
+     "median": 0.19081430399091914,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/lanczos": {
+     "best": 0.22790780800278299,
+     "median": 0.22806387199671008,
+     "runs": 5
+    },
+    "scale/L/320x200/bicubic": {
+     "best": 0.003248191991588101,
+     "median": 0.0032788480166345835,
+     "runs": 122
+    },
+    "scale/L/2048x1280/bicubic": {
+     "best": 0.011491072014905512,
+     "median": 0.011516959988512099,
+     "runs": 35
+    },
+    "reduce/RGB/2": {
+     "best": 0.0015180799819063395,
+     "median": 0.0015717119968030602,
+     "runs": 253
+    },
+    "reduce/RGB/4": {
+     "best": 0.0016266240272670984,
+     "median": 0.001648672012379393,
+     "runs": 243
+    },
+    "reduce/L/2": {
+     "best": 0.00022515200544148684,
+     "median": 0.00023193599190562963,
+     "runs": 1670
+    },
+    "blur/gaussian/RGB/1": {
+     "best": 0.08221600000979379,
+     "median": 0.08225462399423122,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/10": {
+     "best": 0.08468806400196627,
+     "median": 0.08481235199724324,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/30": {
+     "best": 0.08534390397835523,
+     "median": 0.08538624001084827,
+     "runs": 5
+    },
+    "blur/gaussian/RGBA/10": {
+     "best": 0.08461888000601903,
+     "median": 0.08468940801685676,
+     "runs": 5
+    },
+    "blur/gaussian/L/10": {
+     "best": 0.02834323199931532,
+     "median": 0.028412159997969866,
+     "runs": 15
+    },
+    "blur/box/RGB/2": {
+     "best": 0.02814262398169376,
+     "median": 0.028158687986433506,
+     "runs": 15
+    },
+    "blur/box/RGB/10": {
+     "best": 0.028167423995910212,
+     "median": 0.02819478398305364,
+     "runs": 15
+    },
+    "filter/RGB/SMOOTH": {
+     "best": 0.03580499201780185,
+     "median": 0.03594339199480601,
+     "runs": 12
+    },
+    "filter/RGB/SHARPEN": {
+     "best": 0.03587750400765799,
+     "median": 0.035990239994134754,
+     "runs": 12
+    },
+    "filter/RGB/EDGE_ENHANCE": {
+     "best": 0.05311119998805225,
+     "median": 0.05317776001174934,
+     "runs": 8
+    },
+    "filter/RGB/FIND_EDGES": {
+     "best": 0.05320979197858833,
+     "median": 0.053302335989428684,
+     "runs": 8
+    },
+    "filter/RGB/SMOOTH_MORE": {
+     "best": 0.06593401602003723,
+     "median": 0.06594012799905613,
+     "runs": 7
+    },
+    "filter/L/SHARPEN": {
+     "best": 0.0061050879885442555,
+     "median": 0.006115103984484449,
+     "runs": 66
+    },
+    "filter/L/SMOOTH_MORE": {
+     "best": 0.016610784019576386,
+     "median": 0.01662537601077929,
+     "runs": 25
+    },
+    "unsharp/RGB": {
+     "best": 0.10255935997702181,
+     "median": 0.10280729597434402,
+     "runs": 5
+    },
+    "unsharp/L": {
+     "best": 0.03280751997954212,
+     "median": 0.03284358402015641,
+     "runs": 13
+    },
+    "rank/median3/RGB": {
+     "best": 0.02444432000629604,
+     "median": 0.025306655996246263,
+     "runs": 16
+    },
+    "rank/median5/RGB": {
+     "best": 0.08976975997211412,
+     "median": 0.09027740801684558,
+     "runs": 5
+    },
+    "rank/median3/L": {
+     "best": 0.005990208010189235,
+     "median": 0.00601856000139378,
+     "runs": 67
+    },
+    "rank/min3/RGB": {
+     "best": 0.030470591998891905,
+     "median": 0.030739615991478786,
+     "runs": 13
+    },
+    "rank/max3/RGB": {
+     "best": 0.03033075202256441,
+     "median": 0.030483008013106883,
+     "runs": 14
+    },
+    "convert/RGB/L": {
+     "best": 0.0023090559989213943,
+     "median": 0.0023212480009533465,
+     "runs": 173
+    },
+    "convert/RGB/RGBA": {
+     "best": 0.0017252159886993468,
+     "median": 0.001767424022546038,
+     "runs": 225
+    },
+    "convert/RGBA/RGB": {
+     "best": 0.0017283519846387208,
+     "median": 0.001759679988026619,
+     "runs": 228
+    },
+    "convert/RGBA/RGBa": {
+     "best": 0.0030048640037421137,
+     "median": 0.0030346880084834993,
+     "runs": 132
+    },
+    "convert/RGBa/RGBA": {
+     "best": 0.011116704001324251,
+     "median": 0.011125024000648409,
+     "runs": 36
+    },
+    "convert/RGB/HSV": {
+     "best": 0.050228800013428554,
+     "median": 0.0503215039789211,
+     "runs": 8
+    },
+    "convert/RGB/YCbCr": {
+     "best": 0.017938367993338034,
+     "median": 0.01795443199807778,
+     "runs": 23
+    },
+    "convert/YCbCr/RGB": {
+     "best": 0.014072031975956634,
+     "median": 0.014091360004385933,
+     "runs": 29
+    },
+    "convert/RGB/CMYK": {
+     "best": 0.001735839992761612,
+     "median": 0.0017770880076568574,
+     "runs": 225
+    },
+    "convert/L/RGB": {
+     "best": 0.0009226879919879138,
+     "median": 0.0009284479892812669,
+     "runs": 429
+    },
+    "composite/alpha": {
+     "best": 0.021939680009381846,
+     "median": 0.021953440009383485,
+     "runs": 19
+    },
+    "composite/blend": {
+     "best": 0.012951423996128142,
+     "median": 0.012962400011019781,
+     "runs": 31
+    },
+    "composite/mask": {
+     "best": 0.011078400013502687,
+     "median": 0.011103071999968961,
+     "runs": 37
+    },
+    "transpose/RGB/FLIP_LEFT_RIGHT": {
+     "best": 0.0017357440083287656,
+     "median": 0.00181449597585015,
+     "runs": 217
+    },
+    "transpose/RGB/FLIP_TOP_BOTTOM": {
+     "best": 0.0017207040218636394,
+     "median": 0.0019247040036134422,
+     "runs": 211
+    },
+    "transpose/RGB/ROTATE_90": {
+     "best": 0.0055682240054011345,
+     "median": 0.005594688002020121,
+     "runs": 72
+    },
+    "transpose/RGB/ROTATE_180": {
+     "best": 0.0017248319927603006,
+     "median": 0.0017744319920893759,
+     "runs": 224
+    },
+    "transpose/RGB/ROTATE_270": {
+     "best": 0.005108896002639085,
+     "median": 0.005168064002646133,
+     "runs": 77
+    },
+    "transpose/RGB/TRANSPOSE": {
+     "best": 0.0056274880189448595,
+     "median": 0.0056774399999994785,
+     "runs": 70
+    },
+    "transpose/L/ROTATE_90": {
+     "best": 0.0014434880285989493,
+     "median": 0.0015849919873289764,
+     "runs": 250
+    },
+    "transpose/RGBA/ROTATE_90": {
+     "best": 0.005484128021635115,
+     "median": 0.005611328000668436,
+     "runs": 71
+    },
+    "rotate/RGB/30/nearest": {
+     "best": 0.017950848006876186,
+     "median": 0.018128288007574156,
+     "runs": 22
+    },
+    "rotate/RGB/30/bilinear": {
+     "best": 0.110267327982001,
+     "median": 0.11057254401384853,
+     "runs": 5
+    },
+    "rotate/RGB/30/bicubic": {
+     "best": 0.2671941440203227,
+     "median": 0.2678371200163383,
+     "runs": 5
+    },
+    "rotate/RGBA/30/bicubic": {
+     "best": 0.34413292800309137,
+     "median": 0.34448713599704206,
+     "runs": 5
+    },
+    "rotate/RGB/perspective/bilinear": {
+     "best": 0.14953148798667826,
+     "median": 0.1503974079969339,
+     "runs": 5
+    },
+    "lut/RGB/4": {
+     "best": 0.05223414397914894,
+     "median": 0.05225612799404189,
+     "runs": 8
+    },
+    "lut/RGB/16": {
+     "best": 0.0521585920068901,
+     "median": 0.05216838399064727,
+     "runs": 8
+    },
+    "lut/RGB/36": {
+     "best": 0.05852217602659948,
+     "median": 0.058594464004272595,
+     "runs": 7
+    },
+    "lut/RGBA/16": {
+     "best": 0.04963897599373013,
+     "median": 0.04966227200930007,
+     "runs": 9
+    },
+    "point/RGB/table": {
+     "best": 0.010049088014056906,
+     "median": 0.010149823996471241,
+     "runs": 40
+    },
+    "point/RGB/invert": {
+     "best": 0.0018505280022509396,
+     "median": 0.001875999994808808,
+     "runs": 214
+    },
+    "point/L/table": {
+     "best": 0.0035520640085451305,
+     "median": 0.003572832007193938,
+     "runs": 112
+    },
+    "chops/RGB/multiply": {
+     "best": 0.0036416639923118055,
+     "median": 0.003663807990960777,
+     "runs": 110
+    },
+    "chops/RGB/screen": {
+     "best": 0.003644767974037677,
+     "median": 0.0036682559875771403,
+     "runs": 109
+    },
+    "chops/RGB/add": {
+     "best": 0.015558623999822885,
+     "median": 0.015570688003208488,
+     "runs": 26
+    },
+    "chops/RGB/difference": {
+     "best": 0.003095456020673737,
+     "median": 0.003151136013912037,
+     "runs": 127
+    },
+    "chops/RGB/lighter": {
+     "best": 0.006351392017677426,
+     "median": 0.006394944008206949,
+     "runs": 63
+    },
+    "stats/histogram/RGB": {
+     "best": 0.009400704002473503,
+     "median": 0.009412448009243235,
+     "runs": 43
+    },
+    "stats/histogram/L": {
+     "best": 0.003627007972681895,
+     "median": 0.0036413439956959337,
+     "runs": 110
+    },
+    "stats/extrema/RGB": {
+     "best": 0.004087968001840636,
+     "median": 0.00415747202350758,
+     "runs": 95
+    },
+    "quantize/mediancut": {
+     "best": 1.125091872003395,
+     "median": 1.1544989760150202,
+     "runs": 4
+    },
+    "quantize/fastoctree": {
+     "best": 0.04219104000367224,
+     "median": 0.04228847997728735,
+     "runs": 10
+    },
+    "draw/polygons": {
+     "best": 0.06520473599084653,
+     "median": 0.06526713600032963,
+     "runs": 7
+    },
+    "draw/ellipses": {
+     "best": 0.006438015989260748,
+     "median": 0.006489407998742536,
+     "runs": 62
+    },
+    "draw/rectangles": {
+     "best": 0.009560991980833933,
+     "median": 0.009626112005207688,
+     "runs": 42
+    },
+    "draw/lines": {
+     "best": 0.005451295990496874,
+     "median": 0.005506847985088825,
+     "runs": 72
+    },
+    "draw/text": {
+     "best": 0.024594591988716274,
+     "median": 0.024747999996179715,
+     "runs": 17
+    },
+    "codec/decode/jpeg": {
+     "best": 0.028478399995947257,
+     "median": 0.02850028799730353,
+     "runs": 15
+    },
+    "codec/encode/jpeg": {
+     "best": 0.02772313600871712,
+     "median": 0.027798399998573586,
+     "runs": 15
+    },
+    "codec/decode/png": {
+     "best": 0.10813487999257632,
+     "median": 0.10825593600748107,
+     "runs": 5
+    },
+    "codec/encode/png": {
+     "best": 0.7515579519968014,
+     "median": 0.7518582080083434,
+     "runs": 5
+    },
+    "codec/decode/webp": {
+     "best": 0.1072938560100738,
+     "median": 0.10732073601684533,
+     "runs": 5
+    },
+    "codec/encode/webp": {
+     "best": 0.7366018239990808,
+     "median": 0.7367529599869158,
+     "runs": 5
+    },
+    "codec/thumbnail/jpeg": {
+     "best": 4.230401827953756e-05,
+     "median": 4.412801354192197e-05,
+     "runs": 9006
+    },
+    "cycle/0": {
+     "best": 0.05959161598002538,
+     "median": 0.05984755198005587,
+     "runs": 7
+    },
+    "cycle/1": {
+     "best": 0.06292470399057493,
+     "median": 0.06295177599531598,
+     "runs": 7
+    },
+    "cycle/2": {
+     "best": 0.05714137601898983,
+     "median": 0.057202239986509085,
+     "runs": 7
+    },
+    "cycle/3": {
+     "best": 0.07058873600908555,
+     "median": 0.07086329598678276,
+     "runs": 6
+    }
+   },
+   "notes": {},
+   "errors": {}
+  },
+  "opencv": {
+   "family": "opencv",
+   "version": "5.0.0",
+   "results": {
+    "scale/RGB/26x16/bilinear": {
+     "best": 0.01991033600643277,
+     "median": 0.01993756802403368,
+     "runs": 21
+    },
+    "scale/RGB/26x16/bicubic": {
+     "best": 0.019906592002371326,
+     "median": 0.019914047996280715,
+     "runs": 21
+    },
+    "scale/RGB/26x16/lanczos": {
+     "best": 0.019910784001694992,
+     "median": 0.019922144012525678,
+     "runs": 21
+    },
+    "scale/RGB/320x200/bilinear": {
+     "best": 0.006727424013661221,
+     "median": 0.006752607994712889,
+     "runs": 60
+    },
+    "scale/RGB/320x200/bicubic": {
+     "best": 0.006728320004185662,
+     "median": 0.00675833597779274,
+     "runs": 60
+    },
+    "scale/RGB/320x200/lanczos": {
+     "best": 0.0067208639811724424,
+     "median": 0.006766272010281682,
+     "runs": 60
+    },
+    "scale/RGB/2048x1280/bilinear": {
+     "best": 0.031390271993586794,
+     "median": 0.031469727982766926,
+     "runs": 13
+    },
+    "scale/RGB/2048x1280/bicubic": {
+     "best": 0.03139977602404542,
+     "median": 0.031492543988861144,
+     "runs": 13
+    },
+    "scale/RGB/2048x1280/lanczos": {
+     "best": 0.03141024001524784,
+     "median": 0.03148195199901238,
+     "runs": 13
+    },
+    "scale/RGB/5478x3424/bilinear": {
+     "best": 0.07045337601448409,
+     "median": 0.07070185599150136,
+     "runs": 6
+    },
+    "scale/RGB/5478x3424/bicubic": {
+     "best": 0.16025359998457134,
+     "median": 0.16072230399004184,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/lanczos": {
+     "best": 0.32320265599992126,
+     "median": 0.3232982399931643,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/bilinear": {
+     "best": 0.020887552003841847,
+     "median": 0.020899936003843322,
+     "runs": 20
+    },
+    "scale/RGBA/26x16/bicubic": {
+     "best": 0.020891936001135036,
+     "median": 0.02090121599030681,
+     "runs": 20
+    },
+    "scale/RGBA/26x16/lanczos": {
+     "best": 0.020890592015348375,
+     "median": 0.02090809599030763,
+     "runs": 20
+    },
+    "scale/RGBA/320x200/bilinear": {
+     "best": 0.008980351994978264,
+     "median": 0.009004703984828666,
+     "runs": 45
+    },
+    "scale/RGBA/320x200/bicubic": {
+     "best": 0.008988960005808622,
+     "median": 0.00901443199836649,
+     "runs": 45
+    },
+    "scale/RGBA/320x200/lanczos": {
+     "best": 0.008983392006484792,
+     "median": 0.009023744001751766,
+     "runs": 45
+    },
+    "scale/RGBA/2048x1280/bilinear": {
+     "best": 0.04826118401251733,
+     "median": 0.048327583994250745,
+     "runs": 9
+    },
+    "scale/RGBA/2048x1280/bicubic": {
+     "best": 0.048234847985440865,
+     "median": 0.04827567999018356,
+     "runs": 9
+    },
+    "scale/RGBA/2048x1280/lanczos": {
+     "best": 0.0482955839834176,
+     "median": 0.04834425600711256,
+     "runs": 9
+    },
+    "scale/RGBA/5478x3424/bilinear": {
+     "best": 0.04375168000115082,
+     "median": 0.043835007993038744,
+     "runs": 10
+    },
+    "scale/RGBA/5478x3424/bicubic": {
+     "best": 0.2157975359878037,
+     "median": 0.2161109439912252,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/lanczos": {
+     "best": 0.41277254399028607,
+     "median": 0.4129472639760934,
+     "runs": 5
+    },
+    "scale/L/320x200/bicubic": {
+     "best": 0.0023277119908016175,
+     "median": 0.002358688012463972,
+     "runs": 170
+    },
+    "scale/L/2048x1280/bicubic": {
+     "best": 0.01592528002220206,
+     "median": 0.015985856007318944,
+     "runs": 25
+    },
+    "reduce/RGB/2": {
+     "best": 0.0010802239994518459,
+     "median": 0.0011199680157005787,
+     "runs": 354
+    },
+    "reduce/RGB/4": {
+     "best": 0.0009560319886077195,
+     "median": 0.001007071987260133,
+     "runs": 394
+    },
+    "reduce/L/2": {
+     "best": 0.00021827200544066727,
+     "median": 0.00022540800273418427,
+     "runs": 1711
+    },
+    "blur/gaussian/RGB/1": {
+     "best": 0.044056832004571334,
+     "median": 0.04406572799780406,
+     "runs": 10
+    },
+    "blur/gaussian/RGB/10": {
+     "best": 0.4090843199810479,
+     "median": 0.4094338239810895,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/30": {
+     "best": 1.4112272000056691,
+     "median": 1.4150663680047728,
+     "runs": 3
+    },
+    "blur/gaussian/RGBA/10": {
+     "best": 0.5414562239893712,
+     "median": 0.5417829119833186,
+     "runs": 5
+    },
+    "blur/gaussian/L/10": {
+     "best": 0.14609983999980614,
+     "median": 0.14622432002215646,
+     "runs": 5
+    },
+    "blur/box/RGB/2": {
+     "best": 0.010439232020871714,
+     "median": 0.010462943988386542,
+     "runs": 39
+    },
+    "blur/box/RGB/10": {
+     "best": 0.018936512002255768,
+     "median": 0.01897155199549161,
+     "runs": 22
+    },
+    "filter/RGB/SMOOTH": {
+     "best": 0.04013664001831785,
+     "median": 0.04017545600072481,
+     "runs": 10
+    },
+    "filter/RGB/SHARPEN": {
+     "best": 0.04012307201628573,
+     "median": 0.04021158398245461,
+     "runs": 10
+    },
+    "filter/RGB/EDGE_ENHANCE": {
+     "best": 0.03992991999257356,
+     "median": 0.040151232009520754,
+     "runs": 10
+    },
+    "filter/RGB/FIND_EDGES": {
+     "best": 0.03998380800476298,
+     "median": 0.040145983977708966,
+     "runs": 10
+    },
+    "filter/RGB/SMOOTH_MORE": {
+     "best": 0.10278134400141425,
+     "median": 0.10282374400412664,
+     "runs": 5
+    },
+    "filter/L/SHARPEN": {
+     "best": 0.01328105601714924,
+     "median": 0.013294656004291028,
+     "runs": 31
+    },
+    "filter/L/SMOOTH_MORE": {
+     "best": 0.03416073598782532,
+     "median": 0.03417177600204013,
+     "runs": 12
+    },
+    "unsharp/RGB": {
+     "best": 0.09405363199766725,
+     "median": 0.09415116798481904,
+     "runs": 5
+    },
+    "unsharp/L": {
+     "best": 0.03195884800516069,
+     "median": 0.032014175987569615,
+     "runs": 13
+    },
+    "rank/median3/RGB": {
+     "best": 0.005140160006703809,
+     "median": 0.005173248006030917,
+     "runs": 78
+    },
+    "rank/median5/RGB": {
+     "best": 0.04174518398940563,
+     "median": 0.041758687992114574,
+     "runs": 10
+    },
+    "rank/median3/L": {
+     "best": 0.001702143985312432,
+     "median": 0.0017301119805779308,
+     "runs": 231
+    },
+    "rank/min3/RGB": {
+     "best": 0.0031162560044322163,
+     "median": 0.0032133439963217825,
+     "runs": 125
+    },
+    "rank/max3/RGB": {
+     "best": 0.0030996799760032445,
+     "median": 0.0032174079969991,
+     "runs": 125
+    },
+    "convert/RGB/L": {
+     "best": 0.0027766720158979297,
+     "median": 0.0027998719888273627,
+     "runs": 143
+    },
+    "convert/RGB/RGBA": {
+     "best": 0.005070783983683214,
+     "median": 0.005298720003338531,
+     "runs": 75
+    },
+    "convert/RGBA/RGB": {
+     "best": 0.002707680017920211,
+     "median": 0.0029128640017006546,
+     "runs": 136
+    },
+    "convert/RGBA/RGBa": {
+     "best": 0.005182143999263644,
+     "median": 0.005189215997233987,
+     "runs": 78
+    },
+    "convert/RGBa/RGBA": {
+     "best": 0.018983840011060238,
+     "median": 0.018991808028658852,
+     "runs": 22
+    },
+    "convert/RGB/HSV": {
+     "best": 0.013588703994173557,
+     "median": 0.013604480016510934,
+     "runs": 30
+    },
+    "convert/RGB/YCbCr": {
+     "best": 0.0103599040012341,
+     "median": 0.010370688018156216,
+     "runs": 39
+    },
+    "convert/YCbCr/RGB": {
+     "best": 0.005689696001354605,
+     "median": 0.005696224019629881,
+     "runs": 71
+    },
+    "convert/L/RGB": {
+     "best": 0.0005695360014215112,
+     "median": 0.0005902720149606466,
+     "runs": 666
+    },
+    "composite/alpha": {
+     "best": 0.23800563198165037,
+     "median": 0.2399160320055671,
+     "runs": 5
+    },
+    "composite/blend": {
+     "best": 0.01185542400344275,
+     "median": 0.011866336019011214,
+     "runs": 34
+    },
+    "composite/mask": {
+     "best": 0.029191008012276143,
+     "median": 0.029248224018374458,
+     "runs": 14
+    },
+    "transpose/RGB/FLIP_LEFT_RIGHT": {
+     "best": 0.0018134719866793603,
+     "median": 0.0020590079948306084,
+     "runs": 197
+    },
+    "transpose/RGB/FLIP_TOP_BOTTOM": {
+     "best": 0.0012982400075998157,
+     "median": 0.0015660799981560558,
+     "runs": 265
+    },
+    "transpose/RGB/ROTATE_90": {
+     "best": 0.011067808023653924,
+     "median": 0.01135068800067529,
+     "runs": 36
+    },
+    "transpose/RGB/ROTATE_180": {
+     "best": 0.002809952013194561,
+     "median": 0.003112736012553796,
+     "runs": 127
+    },
+    "transpose/RGB/ROTATE_270": {
+     "best": 0.011779455991927534,
+     "median": 0.011930079985177144,
+     "runs": 34
+    },
+    "transpose/RGB/TRANSPOSE": {
+     "best": 0.009869183995760977,
+     "median": 0.01004681599442847,
+     "runs": 40
+    },
+    "transpose/L/ROTATE_90": {
+     "best": 0.0010162880062125623,
+     "median": 0.0010387840156909078,
+     "runs": 384
+    },
+    "transpose/RGBA/ROTATE_90": {
+     "best": 0.007534079981269315,
+     "median": 0.007684704003622755,
+     "runs": 53
+    },
+    "rotate/RGB/30/nearest": {
+     "best": 0.013453343999572098,
+     "median": 0.013505759998224676,
+     "runs": 30
+    },
+    "rotate/RGB/30/bilinear": {
+     "best": 0.035274496010970324,
+     "median": 0.035349983983905986,
+     "runs": 12
+    },
+    "rotate/RGB/30/bicubic": {
+     "best": 0.07899836800061166,
+     "median": 0.07918361597694457,
+     "runs": 6
+    },
+    "rotate/RGBA/30/bicubic": {
+     "best": 0.10217814400675707,
+     "median": 0.10239478401490487,
+     "runs": 5
+    },
+    "rotate/RGB/perspective/bilinear": {
+     "best": 0.039155359991127625,
+     "median": 0.03917209600331262,
+     "runs": 11
+    },
+    "point/RGB/table": {
+     "best": 0.007747135998215526,
+     "median": 0.007757568004308268,
+     "runs": 52
+    },
+    "point/RGB/invert": {
+     "best": 0.001266464008949697,
+     "median": 0.0012919040163978934,
+     "runs": 308
+    },
+    "point/L/table": {
+     "best": 0.0025758720003068447,
+     "median": 0.0025914559955708683,
+     "runs": 155
+    },
+    "chops/RGB/multiply": {
+     "best": 0.010471071989741176,
+     "median": 0.010547776008024812,
+     "runs": 38
+    },
+    "chops/RGB/screen": {
+     "best": 0.014484255982097238,
+     "median": 0.014534335990902036,
+     "runs": 28
+    },
+    "chops/RGB/add": {
+     "best": 0.0022852800029795617,
+     "median": 0.002323103981325403,
+     "runs": 172
+    },
+    "chops/RGB/difference": {
+     "best": 0.002282239991473034,
+     "median": 0.0023131199995987117,
+     "runs": 173
+    },
+    "chops/RGB/lighter": {
+     "best": 0.0022454400022979826,
+     "median": 0.0023080639948602766,
+     "runs": 173
+    },
+    "stats/histogram/RGB": {
+     "best": 0.00991567998426035,
+     "median": 0.009934879984939471,
+     "runs": 41
+    },
+    "stats/histogram/L": {
+     "best": 0.0033467200119048357,
+     "median": 0.003358143992954865,
+     "runs": 120
+    },
+    "stats/extrema/RGB": {
+     "best": 0.004152704001171514,
+     "median": 0.004213856009300798,
+     "runs": 95
+    },
+    "draw/polygons": {
+     "best": 0.06340540800010785,
+     "median": 0.06393344001844525,
+     "runs": 7
+    },
+    "draw/ellipses": {
+     "best": 0.004619583982275799,
+     "median": 0.004697408003266901,
+     "runs": 85
+    },
+    "draw/rectangles": {
+     "best": 0.008958367980085313,
+     "median": 0.009025311999721453,
+     "runs": 45
+    },
+    "draw/lines": {
+     "best": 0.006123647995991632,
+     "median": 0.0063266239885706455,
+     "runs": 64
+    },
+    "draw/text": {
+     "best": 0.0032146560261026025,
+     "median": 0.003275199997005984,
+     "runs": 122
+    },
+    "codec/decode/jpeg": {
+     "best": 0.02791507198708132,
+     "median": 0.028000288002658635,
+     "runs": 15
+    },
+    "codec/encode/jpeg": {
+     "best": 0.02587654400849715,
+     "median": 0.025983903993619606,
+     "runs": 16
+    },
+    "codec/decode/png": {
+     "best": 0.08992735997890122,
+     "median": 0.09003065599245019,
+     "runs": 5
+    },
+    "codec/encode/png": {
+     "best": 0.7345695359981619,
+     "median": 0.735208832018543,
+     "runs": 5
+    },
+    "codec/decode/webp": {
+     "best": 0.09019545599585399,
+     "median": 0.09029414399992675,
+     "runs": 5
+    },
+    "codec/encode/webp": {
+     "best": 0.6888017599994782,
+     "median": 0.6891513919981662,
+     "runs": 5
+    },
+    "codec/thumbnail/jpeg": {
+     "best": 0.012947456008987501,
+     "median": 0.01296911999816075,
+     "runs": 31
+    },
+    "cycle/0": {
+     "best": 0.05498988801264204,
+     "median": 0.05504515199572779,
+     "runs": 8
+    },
+    "cycle/1": {
+     "best": 0.06633696000790223,
+     "median": 0.06652742400183342,
+     "runs": 7
+    },
+    "cycle/2": {
+     "best": 0.05969577599898912,
+     "median": 0.05999296001391485,
+     "runs": 7
+    },
+    "cycle/3": {
+     "best": 0.08853353600716218,
+     "median": 0.08874303998891264,
+     "runs": 5
+    }
+   },
+   "notes": {
+    "scale/RGB/26x16/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/26x16/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/26x16/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/320x200/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/320x200/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/320x200/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/2048x1280/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/2048x1280/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/2048x1280/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/5478x3424/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/5478x3424/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGB/5478x3424/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/26x16/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/26x16/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/26x16/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/320x200/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/320x200/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/320x200/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/2048x1280/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/2048x1280/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/2048x1280/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/5478x3424/bilinear": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/5478x3424/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA/5478x3424/lanczos": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/L/320x200/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/L/2048x1280/bicubic": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "unsharp/RGB": "GaussianBlur + addWeighted; no threshold.",
+    "unsharp/L": "GaussianBlur + addWeighted; no threshold.",
+    "convert/RGB/HSV": "COLOR_RGB2HSV_FULL (hue 0-255, like Pillow).",
+    "convert/RGB/YCbCr": "COLOR_RGB2YCrCb (Cr and Cb swapped).",
+    "convert/YCbCr/RGB": "COLOR_YCrCb2RGB.",
+    "composite/alpha": "Written with numpy: float32 'over' (no native operation).",
+    "rotate/RGB/30/nearest": "warpAffine about the centre, same canvas.",
+    "rotate/RGB/30/bilinear": "warpAffine about the centre, same canvas.",
+    "rotate/RGB/30/bicubic": "warpAffine about the centre, same canvas.",
+    "rotate/RGBA/30/bicubic": "warpAffine about the centre, same canvas; no premultiplication.",
+    "chops/RGB/screen": "255 - multiply(255 - a, 255 - b) / 255.",
+    "draw/polygons": "cv2.fillPoly, ellipse, rectangle and line, filled, no antialiasing.",
+    "draw/ellipses": "cv2.fillPoly, ellipse, rectangle and line, filled, no antialiasing.",
+    "draw/rectangles": "cv2.fillPoly, ellipse, rectangle and line, filled, no antialiasing.",
+    "draw/lines": "cv2.fillPoly, ellipse, rectangle and line, filled, no antialiasing.",
+    "draw/text": "cv2.putText with a Hershey font: not comparable glyphs.",
+    "codec/decode/jpeg": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
+    "codec/encode/jpeg": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
+    "codec/decode/png": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
+    "codec/encode/png": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
+    "codec/decode/webp": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
+    "codec/encode/webp": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
+    "codec/thumbnail/jpeg": "IMREAD_REDUCED_COLOR_8 (DCT scaling), then INTER_AREA.",
+    "cycle/0": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
+    "cycle/1": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
+    "cycle/2": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
+    "cycle/3": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode."
+   },
+   "errors": {}
+  },
+  "vips": {
+   "family": "vips",
+   "version": "8.16.1",
+   "results": {
+    "scale/RGB/26x16/bilinear": {
+     "best": 0.01085353599046357,
+     "median": 0.011091967986430973,
+     "runs": 36
+    },
+    "scale/RGB/26x16/bicubic": {
+     "best": 0.01095843201619573,
+     "median": 0.011065728001995012,
+     "runs": 36
+    },
+    "scale/RGB/26x16/lanczos": {
+     "best": 0.011096383997937664,
+     "median": 0.01132121600676328,
+     "runs": 36
+    },
+    "scale/RGB/320x200/bilinear": {
+     "best": 0.028689024009509012,
+     "median": 0.02961603199946694,
+     "runs": 14
+    },
+    "scale/RGB/320x200/bicubic": {
+     "best": 0.033439936029026285,
+     "median": 0.033995999983744696,
+     "runs": 12
+    },
+    "scale/RGB/320x200/lanczos": {
+     "best": 0.03748339202138595,
+     "median": 0.041385983990039676,
+     "runs": 10
+    },
+    "scale/RGB/2048x1280/bilinear": {
+     "best": 0.03391974398982711,
+     "median": 0.0340892480162438,
+     "runs": 12
+    },
+    "scale/RGB/2048x1280/bicubic": {
+     "best": 0.04225008000503294,
+     "median": 0.04235420800978318,
+     "runs": 10
+    },
+    "scale/RGB/2048x1280/lanczos": {
+     "best": 0.05730969598516822,
+     "median": 0.05739440000616014,
+     "runs": 7
+    },
+    "scale/RGB/5478x3424/bilinear": {
+     "best": 0.4020352959923912,
+     "median": 0.40245577599853277,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bicubic": {
+     "best": 0.7695929920009803,
+     "median": 0.7701862719841301,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/lanczos": {
+     "best": 0.7697788799996488,
+     "median": 0.770462144020712,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/bilinear": {
+     "best": 0.013994816021295264,
+     "median": 0.014209631975973025,
+     "runs": 29
+    },
+    "scale/RGBA/26x16/bicubic": {
+     "best": 0.01406611199490726,
+     "median": 0.014199487981386483,
+     "runs": 29
+    },
+    "scale/RGBA/26x16/lanczos": {
+     "best": 0.014224095997633412,
+     "median": 0.014357151987496763,
+     "runs": 28
+    },
+    "scale/RGBA/320x200/bilinear": {
+     "best": 0.038733983994461596,
+     "median": 0.043201919994316995,
+     "runs": 10
+    },
+    "scale/RGBA/320x200/bicubic": {
+     "best": 0.04441475198836997,
+     "median": 0.04866435198346153,
+     "runs": 9
+    },
+    "scale/RGBA/320x200/lanczos": {
+     "best": 0.0498161920113489,
+     "median": 0.05483891200856306,
+     "runs": 8
+    },
+    "scale/RGBA/2048x1280/bilinear": {
+     "best": 0.037821311998413876,
+     "median": 0.03812716799438931,
+     "runs": 11
+    },
+    "scale/RGBA/2048x1280/bicubic": {
+     "best": 0.047223552013747394,
+     "median": 0.04729151999345049,
+     "runs": 9
+    },
+    "scale/RGBA/2048x1280/lanczos": {
+     "best": 0.06407990399748087,
+     "median": 0.06445657598669641,
+     "runs": 7
+    },
+    "scale/RGBA/5478x3424/bilinear": {
+     "best": 0.4378020479925908,
+     "median": 0.4385427839879412,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bicubic": {
+     "best": 0.9225852160016075,
+     "median": 0.9233931839989964,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/lanczos": {
+     "best": 0.9227957759867422,
+     "median": 0.9230649279779755,
+     "runs": 5
+    },
+    "scale/L/320x200/bicubic": {
+     "best": 0.01231593597913161,
+     "median": 0.012495680013671517,
+     "runs": 32
+    },
+    "scale/L/2048x1280/bicubic": {
+     "best": 0.027999968006042764,
+     "median": 0.028250111994566396,
+     "runs": 15
+    },
+    "reduce/RGB/2": {
+     "best": 0.05371731199556962,
+     "median": 0.06666291199508123,
+     "runs": 7
+    },
+    "reduce/RGB/4": {
+     "best": 0.026522080006543547,
+     "median": 0.031074847996933386,
+     "runs": 14
+    },
+    "reduce/L/2": {
+     "best": 0.017443744000047445,
+     "median": 0.01778038399061188,
+     "runs": 23
+    },
+    "blur/gaussian/RGB/1": {
+     "best": 0.045873823983129114,
+     "median": 0.0461734400014393,
+     "runs": 9
+    },
+    "blur/gaussian/RGB/10": {
+     "best": 0.18539689600584097,
+     "median": 0.18594649599981494,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/30": {
+     "best": 0.6207923199981451,
+     "median": 0.6215639680158347,
+     "runs": 5
+    },
+    "blur/gaussian/RGBA/10": {
+     "best": 0.24604038399411365,
+     "median": 0.24660806398605928,
+     "runs": 5
+    },
+    "blur/gaussian/L/10": {
+     "best": 0.06422940798802301,
+     "median": 0.06442134399549104,
+     "runs": 7
+    },
+    "filter/RGB/SMOOTH": {
+     "best": 0.0382252800045535,
+     "median": 0.03841340800863691,
+     "runs": 11
+    },
+    "filter/RGB/SHARPEN": {
+     "best": 0.03807078400859609,
+     "median": 0.03829788797884248,
+     "runs": 11
+    },
+    "filter/RGB/EDGE_ENHANCE": {
+     "best": 0.03796508800587617,
+     "median": 0.03818793600657955,
+     "runs": 11
+    },
+    "filter/RGB/FIND_EDGES": {
+     "best": 0.03821356798289344,
+     "median": 0.03845609602285549,
+     "runs": 11
+    },
+    "filter/RGB/SMOOTH_MORE": {
+     "best": 0.2476476160227321,
+     "median": 0.2502543040027376,
+     "runs": 5
+    },
+    "filter/L/SHARPEN": {
+     "best": 0.012473536015022546,
+     "median": 0.013130272011039779,
+     "runs": 31
+    },
+    "filter/L/SMOOTH_MORE": {
+     "best": 0.08583740799804218,
+     "median": 0.08616108799469657,
+     "runs": 5
+    },
+    "rank/median3/RGB": {
+     "best": 1.1079691519844346,
+     "median": 1.113682463997975,
+     "runs": 4
+    },
+    "rank/median5/RGB": {
+     "best": 1.2083188160031568,
+     "median": 1.218140543991467,
+     "runs": 4
+    },
+    "rank/median3/L": {
+     "best": 0.35315299200010486,
+     "median": 0.35404598398599774,
+     "runs": 5
+    },
+    "rank/min3/RGB": {
+     "best": 0.19264700802159496,
+     "median": 0.19387238399940543,
+     "runs": 5
+    },
+    "rank/max3/RGB": {
+     "best": 0.11806598398834467,
+     "median": 0.11826739201205783,
+     "runs": 5
+    },
+    "convert/RGB/L": {
+     "best": 0.06003676797263324,
+     "median": 0.06015792000107467,
+     "runs": 7
+    },
+    "convert/RGB/RGBA": {
+     "best": 0.008421728009125218,
+     "median": 0.008984864020021632,
+     "runs": 45
+    },
+    "convert/RGBA/RGB": {
+     "best": 0.010555455985013396,
+     "median": 0.011040000012144446,
+     "runs": 37
+    },
+    "convert/RGBA/RGBa": {
+     "best": 0.04696019200491719,
+     "median": 0.04704003199003637,
+     "runs": 9
+    },
+    "convert/RGBa/RGBA": {
+     "best": 0.04888736002612859,
+     "median": 0.04909014399163425,
+     "runs": 9
+    },
+    "convert/RGB/HSV": {
+     "best": 0.022080224007368088,
+     "median": 0.022224960004677996,
+     "runs": 19
+    },
+    "convert/RGB/CMYK": {
+     "best": 1.5947227839787956,
+     "median": 1.597730559995398,
+     "runs": 3
+    },
+    "convert/L/RGB": {
+     "best": 0.009266048000426963,
+     "median": 0.00934745601261966,
+     "runs": 43
+    },
+    "composite/alpha": {
+     "best": 0.1705260799790267,
+     "median": 0.1709829439932946,
+     "runs": 5
+    },
+    "composite/blend": {
+     "best": 0.04994275199715048,
+     "median": 0.05011212802492082,
+     "runs": 8
+    },
+    "composite/mask": {
+     "best": 0.03903363199788146,
+     "median": 0.039234751980984583,
+     "runs": 11
+    },
+    "transpose/RGB/FLIP_LEFT_RIGHT": {
+     "best": 0.010781599994516,
+     "median": 0.0114142719830852,
+     "runs": 36
+    },
+    "transpose/RGB/FLIP_TOP_BOTTOM": {
+     "best": 0.0037212799943517894,
+     "median": 0.0038118400261737406,
+     "runs": 104
+    },
+    "transpose/RGB/ROTATE_90": {
+     "best": 0.01820585600216873,
+     "median": 0.019089472014456987,
+     "runs": 22
+    },
+    "transpose/RGB/ROTATE_180": {
+     "best": 0.012312672013649717,
+     "median": 0.012770207977155223,
+     "runs": 32
+    },
+    "transpose/RGB/ROTATE_270": {
+     "best": 0.019154048000928015,
+     "median": 0.019493696017889306,
+     "runs": 21
+    },
+    "transpose/L/ROTATE_90": {
+     "best": 0.008288768003694713,
+     "median": 0.009670687984908,
+     "runs": 43
+    },
+    "transpose/RGBA/ROTATE_90": {
+     "best": 0.02295702398987487,
+     "median": 0.0231674239912536,
+     "runs": 18
+    },
+    "rotate/RGB/30/nearest": {
+     "best": 0.06576540801324882,
+     "median": 0.0663123519916553,
+     "runs": 7
+    },
+    "rotate/RGB/30/bilinear": {
+     "best": 0.10776591999456286,
+     "median": 0.10792217601556331,
+     "runs": 5
+    },
+    "rotate/RGB/30/bicubic": {
+     "best": 0.18939484798465855,
+     "median": 0.18997504000435583,
+     "runs": 5
+    },
+    "rotate/RGBA/30/bicubic": {
+     "best": 0.45480201600003056,
+     "median": 0.4556972480204422,
+     "runs": 5
+    },
+    "point/RGB/table": {
+     "best": 0.009771072014700621,
+     "median": 0.010054240003228188,
+     "runs": 40
+    },
+    "point/RGB/invert": {
+     "best": 0.009759136009961367,
+     "median": 0.010029280005255714,
+     "runs": 40
+    },
+    "point/L/table": {
+     "best": 0.003616351983509958,
+     "median": 0.004205792007269338,
+     "runs": 97
+    },
+    "chops/RGB/multiply": {
+     "best": 0.04251747200032696,
+     "median": 0.04270367999561131,
+     "runs": 10
+    },
+    "chops/RGB/add": {
+     "best": 0.019061055994825438,
+     "median": 0.01922783997724764,
+     "runs": 21
+    },
+    "chops/RGB/difference": {
+     "best": 0.034541759989224374,
+     "median": 0.034700288000749424,
+     "runs": 12
+    },
+    "chops/RGB/lighter": {
+     "best": 0.0512065920047462,
+     "median": 0.052102047979133204,
+     "runs": 8
+    },
+    "stats/histogram/RGB": {
+     "best": 0.012862528004916385,
+     "median": 0.013003200001548976,
+     "runs": 31
+    },
+    "stats/histogram/L": {
+     "best": 0.00499775999924168,
+     "median": 0.005534048017580062,
+     "runs": 73
+    },
+    "stats/extrema/RGB": {
+     "best": 0.03358483198098838,
+     "median": 0.033790879999287426,
+     "runs": 12
+    },
+    "codec/decode/jpeg": {
+     "best": 0.031810368003789335,
+     "median": 0.03207385598216206,
+     "runs": 13
+    },
+    "codec/decode/png": {
+     "best": 0.11080883201793768,
+     "median": 0.11102624001796357,
+     "runs": 5
+    },
+    "codec/decode/webp": {
+     "best": 0.11916844799998216,
+     "median": 0.11932294399593957,
+     "runs": 5
+    },
+    "codec/encode/jpeg": {
+     "best": 0.02936796800349839,
+     "median": 0.029576511995401233,
+     "runs": 14
+    },
+    "codec/encode/png": {
+     "best": 0.4644692800065968,
+     "median": 0.46513628799584694,
+     "runs": 5
+    },
+    "codec/encode/webp": {
+     "best": 0.7303476799861528,
+     "median": 0.7317399360181298,
+     "runs": 5
+    },
+    "codec/thumbnail/jpeg": {
+     "best": 0.02141904001473449,
+     "median": 0.02154268798767589,
+     "runs": 19
+    },
+    "cycle/0": {
+     "best": 0.061917056009406224,
+     "median": 0.062098304013488814,
+     "runs": 7
+    },
+    "cycle/1": {
+     "best": 0.07611519997590221,
+     "median": 0.07806540801539086,
+     "runs": 6
+    },
+    "cycle/2": {
+     "best": 0.07660662400303409,
+     "median": 0.07752476801397279,
+     "runs": 6
+    },
+    "cycle/3": {
+     "best": 0.09956089602201246,
+     "median": 0.09983171199564822,
+     "runs": 5
+    }
+   },
+   "notes": {
+    "scale/RGBA/26x16/bilinear": "resize without premultiplying alpha.",
+    "scale/RGBA/26x16/bicubic": "resize without premultiplying alpha.",
+    "scale/RGBA/26x16/lanczos": "resize without premultiplying alpha.",
+    "scale/RGBA/320x200/bilinear": "resize without premultiplying alpha.",
+    "scale/RGBA/320x200/bicubic": "resize without premultiplying alpha.",
+    "scale/RGBA/320x200/lanczos": "resize without premultiplying alpha.",
+    "scale/RGBA/2048x1280/bilinear": "resize without premultiplying alpha.",
+    "scale/RGBA/2048x1280/bicubic": "resize without premultiplying alpha.",
+    "scale/RGBA/2048x1280/lanczos": "resize without premultiplying alpha.",
+    "scale/RGBA/5478x3424/bilinear": "resize without premultiplying alpha.",
+    "scale/RGBA/5478x3424/bicubic": "resize without premultiplying alpha.",
+    "scale/RGBA/5478x3424/lanczos": "resize without premultiplying alpha.",
+    "blur/gaussian/RGB/1": "gaussblur with the default min_ampl 0.2: a shorter kernel than Pillow's.",
+    "blur/gaussian/RGB/10": "gaussblur with the default min_ampl 0.2: a shorter kernel than Pillow's.",
+    "blur/gaussian/RGB/30": "gaussblur with the default min_ampl 0.2: a shorter kernel than Pillow's.",
+    "blur/gaussian/RGBA/10": "gaussblur with the default min_ampl 0.2: a shorter kernel than Pillow's.",
+    "blur/gaussian/L/10": "gaussblur with the default min_ampl 0.2: a shorter kernel than Pillow's.",
+    "convert/RGB/L": "colourspace b-w, through CIE XYZ.",
+    "convert/RGB/HSV": "colourspace hsv.",
+    "convert/RGB/CMYK": "colourspace cmyk, through a colour profile (lcms).",
+    "convert/L/RGB": "colourspace srgb from b-w.",
+    "composite/alpha": "composite2 'over', in float and premultiplied.",
+    "rotate/RGB/30/nearest": "rotate() enlarges the canvas to fit the rotated image.",
+    "rotate/RGB/30/bilinear": "rotate() enlarges the canvas to fit the rotated image.",
+    "rotate/RGB/30/bicubic": "rotate() enlarges the canvas to fit the rotated image.",
+    "rotate/RGBA/30/bicubic": "rotate() enlarges the canvas to fit the rotated image.",
+    "codec/decode/jpeg": "Debian's libjpeg-turbo, libspng and libwebp.",
+    "codec/decode/png": "Debian's libjpeg-turbo, libspng and libwebp.",
+    "codec/decode/webp": "Debian's libjpeg-turbo, libspng and libwebp.",
+    "codec/encode/jpeg": "Debian's libjpeg-turbo, libspng and libwebp.",
+    "codec/encode/png": "Debian's libjpeg-turbo, libspng and libwebp.",
+    "codec/encode/webp": "Debian's libjpeg-turbo, libspng and libwebp.",
+    "codec/thumbnail/jpeg": "thumbnail_buffer: shrink-on-load, then resize.",
+    "cycle/0": "One lazy pipeline: decode, rot, resize (cubic), gaussblur, jpegsave.",
+    "cycle/1": "One lazy pipeline: decode, rot, resize (cubic), gaussblur, jpegsave.",
+    "cycle/2": "One lazy pipeline: decode, rot, resize (cubic), gaussblur, jpegsave.",
+    "cycle/3": "One lazy pipeline: decode, rot, resize (cubic), gaussblur, jpegsave."
+   },
+   "errors": {}
+  },
+  "wand": {
+   "family": "wand",
+   "version": "7.1.1",
+   "results": {
+    "scale/RGB/26x16/bilinear": {
+     "best": 0.043094944005133584,
+     "median": 0.043138495995663106,
+     "runs": 10
+    },
+    "scale/RGB/26x16/bicubic": {
+     "best": 0.07901974397827871,
+     "median": 0.0796607359952759,
+     "runs": 6
+    },
+    "scale/RGB/26x16/lanczos": {
+     "best": 0.11419247998856008,
+     "median": 0.11449657601770014,
+     "runs": 5
+    },
+    "scale/RGB/320x200/bilinear": {
+     "best": 0.050881407980341464,
+     "median": 0.05091107200132683,
+     "runs": 8
+    },
+    "scale/RGB/320x200/bicubic": {
+     "best": 0.10143696001614444,
+     "median": 0.10160518399788998,
+     "runs": 5
+    },
+    "scale/RGB/320x200/lanczos": {
+     "best": 0.14935171202523634,
+     "median": 0.14966969599481672,
+     "runs": 5
+    },
+    "scale/RGB/2048x1280/bilinear": {
+     "best": 0.17673126398585737,
+     "median": 0.17715452797710896,
+     "runs": 5
+    },
+    "scale/RGB/2048x1280/bicubic": {
+     "best": 0.24748963202000596,
+     "median": 0.24764716799836606,
+     "runs": 5
+    },
+    "scale/RGB/2048x1280/lanczos": {
+     "best": 0.3133383360109292,
+     "median": 0.31366054399404675,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bilinear": {
+     "best": 0.8165046719950624,
+     "median": 0.8198999040178023,
+     "runs": 5
+    },
+    "scale/RGB/5478x3424/bicubic": {
+     "best": 1.0724424959917087,
+     "median": 1.0765512640064117,
+     "runs": 4
+    },
+    "scale/RGB/5478x3424/lanczos": {
+     "best": 1.3411069760040846,
+     "median": 1.3441385279875249,
+     "runs": 3
+    },
+    "scale/RGBA/26x16/bilinear": {
+     "best": 0.0829741439956706,
+     "median": 0.08334291199571453,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/bicubic": {
+     "best": 0.15764435200253502,
+     "median": 0.15788588800933212,
+     "runs": 5
+    },
+    "scale/RGBA/26x16/lanczos": {
+     "best": 0.22791603198857047,
+     "median": 0.2282219520129729,
+     "runs": 5
+    },
+    "scale/RGBA/320x200/bilinear": {
+     "best": 0.10964012800832279,
+     "median": 0.10971513600088656,
+     "runs": 5
+    },
+    "scale/RGBA/320x200/bicubic": {
+     "best": 0.24316774398903362,
+     "median": 0.2432171200052835,
+     "runs": 5
+    },
+    "scale/RGBA/320x200/lanczos": {
+     "best": 0.35069251200184226,
+     "median": 0.351133888005279,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/bilinear": {
+     "best": 0.3413269119919278,
+     "median": 0.3420791039825417,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/bicubic": {
+     "best": 0.5102782720059622,
+     "median": 0.5105709759809542,
+     "runs": 5
+    },
+    "scale/RGBA/2048x1280/lanczos": {
+     "best": 0.6809491839958355,
+     "median": 0.6820484159979969,
+     "runs": 5
+    },
+    "scale/RGBA/5478x3424/bilinear": {
+     "best": 1.519564319984056,
+     "median": 1.5195675200084224,
+     "runs": 3
+    },
+    "scale/RGBA/5478x3424/bicubic": {
+     "best": 2.189384864002932,
+     "median": 2.18961273599416,
+     "runs": 3
+    },
+    "scale/RGBA/5478x3424/lanczos": {
+     "best": 2.732305504003307,
+     "median": 2.732761983992532,
+     "runs": 3
+    },
+    "scale/L/320x200/bicubic": {
+     "best": 0.041186240006936714,
+     "median": 0.04132156798732467,
+     "runs": 10
+    },
+    "scale/L/2048x1280/bicubic": {
+     "best": 0.10140934400260448,
+     "median": 0.1014562239870429,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/1": {
+     "best": 0.7460430719947908,
+     "median": 0.7472793600172736,
+     "runs": 5
+    },
+    "blur/gaussian/RGB/10": {
+     "best": 2.480958880012622,
+     "median": 2.4812203200126532,
+     "runs": 3
+    },
+    "blur/gaussian/RGB/30": {
+     "best": 6.042605855996953,
+     "median": 6.0433304000180215,
+     "runs": 3
+    },
+    "blur/gaussian/RGBA/10": {
+     "best": 5.5530406719772145,
+     "median": 5.555772447987692,
+     "runs": 3
+    },
+    "blur/gaussian/L/10": {
+     "best": 1.0490916479902808,
+     "median": 1.0504404800012708,
+     "runs": 4
+    },
+    "unsharp/RGB": {
+     "best": 1.0649074880057015,
+     "median": 1.0677178880141582,
+     "runs": 4
+    },
+    "unsharp/L": {
+     "best": 0.5799382400000468,
+     "median": 0.5802895039960276,
+     "runs": 5
+    },
+    "rank/median3/RGB": {
+     "best": 3.380225343978964,
+     "median": 3.383065183996223,
+     "runs": 3
+    },
+    "rank/median5/RGB": {
+     "best": 10.907137568021426,
+     "median": 10.909074560011504,
+     "runs": 3
+    },
+    "rank/median3/L": {
+     "best": 1.0363628480117768,
+     "median": 1.0374681919929571,
+     "runs": 4
+    },
+    "rank/min3/RGB": {
+     "best": 0.3473002560203895,
+     "median": 0.34856185599346645,
+     "runs": 5
+    },
+    "rank/max3/RGB": {
+     "best": 0.34692867199191824,
+     "median": 0.3479200639994815,
+     "runs": 5
+    },
+    "convert/RGB/L": {
+     "best": 0.024689791986020282,
+     "median": 0.024790624011075124,
+     "runs": 17
+    },
+    "convert/RGB/RGBA": {
+     "best": 0.03947260801214725,
+     "median": 0.039587423991179094,
+     "runs": 11
+    },
+    "convert/RGBA/RGB": {
+     "best": 0.02168700800393708,
+     "median": 0.02180963201681152,
+     "runs": 19
+    },
+    "convert/RGB/HSV": {
+     "best": 0.10002473599161021,
+     "median": 0.10005756799364462,
+     "runs": 5
+    },
+    "convert/RGB/YCbCr": {
+     "best": 0.06788454402703792,
+     "median": 0.06809327998780645,
+     "runs": 6
+    },
+    "convert/RGB/CMYK": {
+     "best": 0.33070432001841255,
+     "median": 0.3310177600069437,
+     "runs": 5
+    },
+    "convert/L/RGB": {
+     "best": 0.03554179199272767,
+     "median": 0.035586143989348784,
+     "runs": 12
+    },
+    "composite/alpha": {
+     "best": 0.11692057599429972,
+     "median": 0.11701247998280451,
+     "runs": 5
+    },
+    "transpose/RGB/FLIP_LEFT_RIGHT": {
+     "best": 0.027834464010084048,
+     "median": 0.02787728002294898,
+     "runs": 15
+    },
+    "transpose/RGB/FLIP_TOP_BOTTOM": {
+     "best": 0.027911328012123704,
+     "median": 0.02797267198911868,
+     "runs": 15
+    },
+    "transpose/RGB/ROTATE_90": {
+     "best": 0.038039615988964215,
+     "median": 0.03833519999170676,
+     "runs": 11
+    },
+    "transpose/RGB/ROTATE_180": {
+     "best": 0.02858672000002116,
+     "median": 0.028709856007480994,
+     "runs": 14
+    },
+    "transpose/RGB/ROTATE_270": {
+     "best": 0.03708457600441761,
+     "median": 0.03730960001121275,
+     "runs": 11
+    },
+    "transpose/RGB/TRANSPOSE": {
+     "best": 0.05091212800471112,
+     "median": 0.05102371200337075,
+     "runs": 8
+    },
+    "transpose/L/ROTATE_90": {
+     "best": 0.017633215989917517,
+     "median": 0.017894880002131686,
+     "runs": 23
+    },
+    "transpose/RGBA/ROTATE_90": {
+     "best": 0.04652252799132839,
+     "median": 0.04662511998321861,
+     "runs": 9
+    },
+    "rotate/RGB/30/bilinear": {
+     "best": 2.568924735998735,
+     "median": 2.5700112000049558,
+     "runs": 3
+    },
+    "rotate/RGB/perspective/bilinear": {
+     "best": 1.952857024007244,
+     "median": 1.9531568320235237,
+     "runs": 3
+    },
+    "point/RGB/table": {
+     "best": 0.03522025598795153,
+     "median": 0.03526329598389566,
+     "runs": 12
+    },
+    "point/RGB/invert": {
+     "best": 0.023742880002828315,
+     "median": 0.023837952001485974,
+     "runs": 17
+    },
+    "chops/RGB/multiply": {
+     "best": 0.18605200000456534,
+     "median": 0.18614534399239346,
+     "runs": 5
+    },
+    "chops/RGB/screen": {
+     "best": 0.17408406399772502,
+     "median": 0.17430451200925745,
+     "runs": 5
+    },
+    "chops/RGB/add": {
+     "best": 0.17591744000674225,
+     "median": 0.17594780802028254,
+     "runs": 5
+    },
+    "chops/RGB/difference": {
+     "best": 0.19677939199027605,
+     "median": 0.19683513598283753,
+     "runs": 5
+    },
+    "chops/RGB/lighter": {
+     "best": 0.1849532799969893,
+     "median": 0.18519676799769513,
+     "runs": 5
+    },
+    "quantize/mediancut": {
+     "best": 3.0135544640070293,
+     "median": 3.0190045119961724,
+     "runs": 3
+    },
+    "codec/decode/jpeg": {
+     "best": 0.03637241601245478,
+     "median": 0.03641391999553889,
+     "runs": 11
+    },
+    "codec/decode/png": {
+     "best": 0.10012630402343348,
+     "median": 0.10020902400719933,
+     "runs": 5
+    },
+    "codec/decode/webp": {
+     "best": 0.10041427199030295,
+     "median": 0.10044982397812419,
+     "runs": 5
+    },
+    "codec/encode/jpeg": {
+     "best": 0.06807462399592623,
+     "median": 0.06832345598377287,
+     "runs": 6
+    },
+    "codec/encode/png": {
+     "best": 0.9936419519945048,
+     "median": 0.9942679360101465,
+     "runs": 5
+    },
+    "codec/encode/webp": {
+     "best": 0.7406388160015922,
+     "median": 0.741110272007063,
+     "runs": 5
+    },
+    "codec/thumbnail/jpeg": {
+     "best": 0.03059916800702922,
+     "median": 0.03100560000166297,
+     "runs": 13
+    },
+    "cycle/0": {
+     "best": 0.10889545601094142,
+     "median": 0.10918127998593263,
+     "runs": 5
+    },
+    "cycle/1": {
+     "best": 0.14459689598879777,
+     "median": 0.14481308800168335,
+     "runs": 5
+    },
+    "cycle/2": {
+     "best": 0.22801196802174672,
+     "median": 0.2282789119926747,
+     "runs": 5
+    },
+    "cycle/3": {
+     "best": 0.44592800000100397,
+     "median": 0.44619852799223736,
+     "runs": 5
+    }
+   },
+   "notes": {
+    "scale/RGB/26x16/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/26x16/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/26x16/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/320x200/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/320x200/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/320x200/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/2048x1280/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/2048x1280/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/2048x1280/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/5478x3424/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/5478x3424/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGB/5478x3424/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/26x16/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/26x16/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/26x16/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/320x200/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/320x200/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/320x200/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/2048x1280/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/2048x1280/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/2048x1280/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/5478x3424/bilinear": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/5478x3424/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/RGBA/5478x3424/lanczos": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/L/320x200/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "scale/L/2048x1280/bicubic": "Filters triangle, catrom (Catmull-Rom, like Pillow's bicubic) and lanczos.",
+    "blur/gaussian/RGB/1": "blur(): ImageMagick's separable Gaussian.",
+    "blur/gaussian/RGB/10": "blur(): ImageMagick's separable Gaussian.",
+    "blur/gaussian/RGB/30": "blur(): ImageMagick's separable Gaussian.",
+    "blur/gaussian/RGBA/10": "blur(): ImageMagick's separable Gaussian.",
+    "blur/gaussian/L/10": "blur(): ImageMagick's separable Gaussian.",
+    "unsharp/RGB": "unsharp_mask(sigma 2, amount 1.5, threshold 3/255).",
+    "unsharp/L": "unsharp_mask(sigma 2, amount 1.5, threshold 3/255).",
+    "rank/median3/RGB": "statistic() over a 3x3 or 5x5 window.",
+    "rank/median5/RGB": "statistic() over a 3x3 or 5x5 window.",
+    "rank/median3/L": "statistic() over a 3x3 or 5x5 window.",
+    "rank/min3/RGB": "statistic() over a 3x3 or 5x5 window.",
+    "rank/max3/RGB": "statistic() over a 3x3 or 5x5 window.",
+    "rotate/RGB/30/bilinear": "rotate(): ImageMagick's shear rotation, enlarges the canvas; no filter choice.",
+    "rotate/RGB/perspective/bilinear": "distort('perspective'): EWA resampling, higher quality and cost.",
+    "point/RGB/table": "gamma(1.25), the same curve as the table.",
+    "chops/RGB/add": "composite 'plus'.",
+    "chops/RGB/lighter": "composite 'lighten'.",
+    "quantize/mediancut": "quantize(256), no dither.",
+    "codec/decode/jpeg": "Debian's libjpeg-turbo, libpng and libwebp.",
+    "codec/decode/png": "Debian's libjpeg-turbo, libpng and libwebp.",
+    "codec/decode/webp": "Debian's libjpeg-turbo, libpng and libwebp.",
+    "codec/encode/jpeg": "Debian's libjpeg-turbo, libpng and libwebp.",
+    "codec/encode/png": "compression_quality 65: zlib level 6, adaptive filter.",
+    "codec/encode/webp": "Debian's libjpeg-turbo, libpng and libwebp.",
+    "codec/thumbnail/jpeg": "jpeg:size hint (DCT scaling), then thumbnail().",
+    "cycle/0": "read, rotate, resize (catrom), blur, JPEG q85.",
+    "cycle/1": "read, rotate, resize (catrom), blur, JPEG q85.",
+    "cycle/2": "read, rotate, resize (catrom), blur, JPEG q85.",
+    "cycle/3": "read, rotate, resize (catrom), blur, JPEG q85."
+   },
+   "errors": {}
+  }
+ }
+}
