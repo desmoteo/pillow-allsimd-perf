@@ -1,0 +1,41 @@
+copy 16 MB into an existing buffer: 1.70 ms = 19.3 GB/s (read+write)
+copy 16 MB into a new array: 1.73 ms, 0 faults/call
+OpenCV 5.0.0, IPP absent
+case                                 pillow ms    flt    cv ms    flt
+chops/RGB/add                             3.19      0     2.33      0
+chops/RGB/difference                      3.15      0     2.31      0
+chops/RGB/lighter                         3.14      0     2.28      0
+point/RGB/invert                          1.88      0     1.28      0
+point/L/table                             3.56      0     2.58      0
+point/RGB/table                          10.13      0     7.75      0
+transpose/RGB/FLIP_TOP_BOTTOM             1.82      0     1.52      0
+transpose/RGB/FLIP_LEFT_RIGHT             1.73      0     1.85      0
+transpose/RGB/ROTATE_180                  1.71      0     3.02      0
+transpose/L/ROTATE_90                     1.55      0     1.00      0
+convert/RGBA/RGB                          1.82      0     2.72      0
+convert/RGB/RGBA                          1.72      0     4.11      0
+convert/L/RGB                             0.92      0     0.59      0
+convert/RGB/YCbCr                        17.35      0    10.36      0
+convert/YCbCr/RGB                        12.18      0     5.71      0
+convert/RGB/HSV                          35.56      0    13.59      0
+rank/min3/RGB                             5.10      0     3.10      0
+rank/median3/RGB                          8.22      0     5.07      0
+reduce/RGB/2                              1.60      0     1.27      0
+reduce/RGB/4                              1.65      0     1.05      0
+blur/box/RGB/2                           21.28   1325    10.48      0
+blur/box/RGB/10                          34.08   1325    18.89      0
+blur/gaussian/RGB/1                      52.26   1325    43.93      0
+unsharp/RGB                              75.86   1325    94.19      0
+unsharp/L                                17.91      0    31.88      0
+composite/blend                          12.96      0    11.85      0
+filter/RGB/FIND_EDGES                    26.61      0    40.07      0
+scale/RGB/5478x3424/bilinear             91.91   3321    69.98    452
+scale/RGBA/5478x3424/bilinear           156.48   5713    43.74    433
+scale/RGBA/5478x3424/bicubic            190.34   5713   219.44    433
+scale/RGB/320x200/lanczos                18.11      0     6.74      0
+rotate/RGB/30/bilinear                  108.04      0    35.44      0
+rotate/RGB/30/bicubic                   266.11      0    81.12      0
+rotate/RGB/perspective/bilinear         117.11      0    39.10      0
+draw/text                                 5.76      0     3.24      0
+draw/polygons                            56.39      0    63.45      0
+draw/ellipses                             6.01      0     4.65      0

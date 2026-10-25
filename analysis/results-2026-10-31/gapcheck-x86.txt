@@ -1,0 +1,41 @@
+copy 16 MB into an existing buffer: 0.73 ms = 44.9 GB/s (read+write)
+copy 16 MB into a new array: 0.73 ms, 0 faults/call
+OpenCV 5.0.0, IPP on
+case                                 pillow ms    flt    cv ms    flt  cv noIPP
+chops/RGB/add                             1.91      0     1.39      0      1.38
+chops/RGB/difference                      1.93      0     1.38      0      1.38
+chops/RGB/lighter                         1.85      0     1.37      0      1.38
+point/RGB/invert                          1.27      0     0.91      0      0.91
+point/L/table                             1.52      0     1.09      0      1.10
+point/RGB/table                           3.87      0     3.23      0      3.23
+transpose/RGB/FLIP_TOP_BOTTOM             1.22      0     0.92      0      0.88
+transpose/RGB/FLIP_LEFT_RIGHT             1.38      0     1.00      0      4.44  <- IPP
+transpose/RGB/ROTATE_180                  1.38      0     0.99      0      5.27  <- IPP
+transpose/L/ROTATE_90                     0.44      0     0.97      0      0.96
+convert/RGBA/RGB                          1.21      0     1.06      0      1.07
+convert/RGB/RGBA                          1.22      0     1.24      0      1.08
+convert/L/RGB                             0.79      0     0.62      0      0.62
+convert/RGB/YCbCr                         3.08      0     2.58      0      2.58
+convert/YCbCr/RGB                         1.98      0     2.43      0      2.43
+convert/RGB/HSV                           8.97      0     3.64      0      3.64
+rank/min3/RGB                             2.18      0     1.26      0      1.27
+rank/median3/RGB                          2.81      0     2.14      0      2.14
+reduce/RGB/2                              0.73      0     1.10      0      1.10
+reduce/RGB/4                              1.42      0     4.85      0      4.85
+blur/box/RGB/2                            9.49   1325     3.19      0      3.11
+blur/box/RGB/10                          10.98   1325     9.43      0      9.42
+blur/gaussian/RGB/1                      17.95   1325     7.57      0      7.52
+unsharp/RGB                              28.81   1325    15.45      0     15.45
+unsharp/L                                 6.51      0     5.25      0      5.24
+composite/blend                           3.27      0     1.78      0      1.78
+filter/RGB/FIND_EDGES                     4.38      0     6.62      0      6.61
+scale/RGB/5478x3424/bilinear             24.62   3926    26.81    452     26.90
+scale/RGBA/5478x3424/bilinear            45.30   5440    31.67    433     31.65
+scale/RGBA/5478x3424/bicubic             53.56   5440    32.85    433    100.33  <- IPP
+scale/RGB/320x200/lanczos                 3.23      0     3.60      0      3.60
+rotate/RGB/30/bilinear                   35.63      0    26.08      0     24.91
+rotate/RGB/30/bicubic                    91.32      0    62.76      0     62.04
+rotate/RGB/perspective/bilinear          31.83      0    24.98      0     24.95
+draw/text                                 3.25      0     2.10      0      2.11
+draw/polygons                            25.26      0    28.41      0     28.30
+draw/ellipses                             2.23      0     2.76      0      2.75

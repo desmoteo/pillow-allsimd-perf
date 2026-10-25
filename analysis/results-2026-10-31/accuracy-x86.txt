@@ -1,0 +1,35 @@
+OpenCV 5.0.0, default hint 1
+Gaussian sigma 1 (reference: true Gaussian, radius 4)
+  Pillow GaussianBlur                   17.94 ms   max   2  mean 0.501  differ  49.0%
+  OpenCV accurate                        7.86 ms   max   1  mean 0.004  differ   0.4%
+  OpenCV approx                          7.82 ms   max   1  mean 0.004  differ   0.4%
+Gaussian sigma 2 (reference: true Gaussian, radius 8)
+  Pillow GaussianBlur                   21.02 ms   max   2  mean 0.196  differ  19.6%
+  OpenCV accurate                       14.58 ms   max   1  mean 0.011  differ   1.1%
+  OpenCV approx                         14.58 ms   max   1  mean 0.011  differ   1.1%
+Box 5x5 (reference: exact mean)
+  Pillow BoxBlur(2)                      9.52 ms   max   1  mean 0.091  differ   9.1%
+  OpenCV blur                            2.87 ms   max   0  mean 0.000  differ   0.0%
+RGB -> YCbCr (reference: JPEG full-range BT.601 in float)
+  Pillow convert('YCbCr')                3.15 ms   max   1  mean 0.472  differ  47.2%
+  OpenCV accurate                        2.56 ms   max   1  mean 0.107  differ  10.7%
+  OpenCV approx                          2.55 ms   max   1  mean 0.107  differ  10.7%
+YCbCr -> RGB (reference: JPEG inverse in float)
+  Pillow convert('RGB')                  1.99 ms   max   1  mean 0.475  differ  47.5%
+  OpenCV accurate                        2.46 ms   max   1  mean 0.031  differ   3.1%
+  OpenCV approx                          2.46 ms   max   1  mean 0.031  differ   3.1%
+RGB -> HSV, hue in 0..255 (reference: colorsys in float; hue error is circular)
+  Pillow convert('HSV') hue              8.96 ms   max   1  mean 0.500  differ  50.0%
+  Pillow convert('HSV') sat, val         0.00 ms   max   1  mean 0.242  differ  24.2%
+  OpenCV HSV_FULL hue                    3.56 ms   max   1  mean 0.491  differ  49.1%
+  OpenCV HSV_FULL sat, val               0.00 ms   max   1  mean 0.004  differ   0.4%
+Bilinear upscale RGB to 5478x3424 (reference: float bilinear)
+  Pillow resize BILINEAR                25.65 ms   max   1  mean 0.179  differ  17.9%
+  OpenCV INTER_LINEAR                   26.74 ms   max   1  mean 0.127  differ  12.7%
+Bilinear upscale opaque RGBA to 5478x3424 (Carotene on arm64)
+  Pillow resize BILINEAR                39.37 ms   max   1  mean 0.134  differ  13.4%
+  OpenCV INTER_LINEAR                   31.91 ms   max   1  mean 0.095  differ   9.5%
+Rotate 30 degrees, bilinear (reference: float bilinear of the same map; inside only)
+  Pillow transform AFFINE               36.12 ms   max   1  mean 0.414  differ  41.4%
+  OpenCV accurate                       23.53 ms   max   1  mean 0.000  differ   0.0%
+  OpenCV approx                         23.76 ms   max   1  mean 0.000  differ   0.0%
