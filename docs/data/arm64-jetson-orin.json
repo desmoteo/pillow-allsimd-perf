@@ -14,7 +14,7 @@
   "Flags": "fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg",
   "gcc": "14.2.0",
   "branch": "simd/pillow-13",
-  "commit": "28b55224b"
+  "commit": "7238975d1"
  },
  "suites": [
   {
@@ -690,6 +690,18 @@
    "title": "500 lines 5px wide",
    "work": "shapes",
    "n": 500
+  },
+  "draw/outline/rectangles": {
+   "suite": "draw",
+   "title": "500 bounding boxes, 2px outline",
+   "work": "shapes",
+   "n": 500
+  },
+  "draw/outline/polygons": {
+   "suite": "draw",
+   "title": "100 ROI polygons of 12 points, 2px outline",
+   "work": "shapes",
+   "n": 100
   },
   "draw/text": {
    "suite": "draw",
@@ -1858,6 +1870,26 @@
       0.11146697599906474,
       0.11148463998688385
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.00368758401600644,
+     "median": 0.003805407992331311,
+     "runs": 156,
+     "rounds": [
+      0.003735167992999777,
+      0.00368758401600644,
+      0.003729023999767378
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.02580390399089083,
+     "median": 0.025898048013914376,
+     "runs": 24,
+     "rounds": [
+      0.02580390399089083,
+      0.026099167997017503,
+      0.026088831975357607
+     ]
     }
    },
    "notes": {},
@@ -2955,6 +2987,26 @@
       0.09606640000129119,
       0.096116639993852,
       0.09712016000412405
+     ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.0036353920004330575,
+     "median": 0.003726240014657378,
+     "runs": 159,
+     "rounds": [
+      0.003705344017362222,
+      0.00365638398216106,
+      0.0036353920004330575
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.003972928010625765,
+     "median": 0.004048959992360324,
+     "runs": 148,
+     "rounds": [
+      0.004008640011306852,
+      0.003972928010625765,
+      0.004034336016047746
      ]
     }
    },
@@ -4054,6 +4106,26 @@
       0.07544047999545,
       0.07456927999737673
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.0036099840071983635,
+     "median": 0.003678048000438139,
+     "runs": 159,
+     "rounds": [
+      0.0036740800132974982,
+      0.0036099840071983635,
+      0.003648704005172476
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.003979295986937359,
+     "median": 0.00402547197882086,
+     "runs": 147,
+     "rounds": [
+      0.004174847999820486,
+      0.003979295986937359,
+      0.003992448007920757
+     ]
     }
    },
    "notes": {},
@@ -5082,6 +5154,26 @@
       0.09267024000291713,
       0.09227721599745564
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.008940895990235731,
+     "median": 0.00898351997602731,
+     "runs": 67,
+     "rounds": [
+      0.008940895990235731,
+      0.00897868801257573,
+      0.009000607999041677
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0030382080003619194,
+     "median": 0.00313887998345308,
+     "runs": 190,
+     "rounds": [
+      0.0030382080003619194,
+      0.003079840011196211,
+      0.0030467199976556003
+     ]
     }
    },
    "notes": {
@@ -5137,7 +5229,9 @@
     "cycle/0": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
     "cycle/1": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
     "cycle/2": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
-    "cycle/3": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode."
+    "cycle/3": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
+    "draw/outline/rectangles": "cv2.rectangle and cv2.polylines (closed), thickness 2: centred on the edges, with round joins, it sets about 1.5x the pixels of Pillow's width 2, drawn inside the shape.",
+    "draw/outline/polygons": "cv2.rectangle and cv2.polylines (closed), thickness 2: centred on the edges, with round joins, it sets about 1.5x the pixels of Pillow's width 2, drawn inside the shape."
    },
    "errors": {}
   },

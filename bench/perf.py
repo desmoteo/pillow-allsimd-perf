@@ -49,7 +49,9 @@ SINGLE_THREAD_ENV = {
 def prepare(out: Path, size: tuple[int, int]) -> None:
     """Writes the shared inputs with the Pillow on sys.path."""
     import io
+    import math
 
+    from common import OUTLINE_SHAPES, ROI_POINTS
     from PIL import Image, ImageChops, ImageFilter
 
     w, h = size
@@ -94,6 +96,31 @@ def prepare(out: Path, size: tuple[int, int]) -> None:
     }
     words = "the quick brown fox jumps over a lazy dog while pillow draws".split()
     text = [" ".join(rnd.choice(words) for _ in range(12)) for _ in range(100)]
+    # Outline shapes from their own generator, so the inputs above don't change.
+    orn = random.Random(5678)
+
+    def ocolor() -> list[int]:
+        return [orn.randrange(256) for _ in range(3)]
+
+    def bbox() -> list[float]:
+        bw, bh = orn.uniform(16, 320), orn.uniform(16, 320)
+        x, y = orn.uniform(0, w - bw), orn.uniform(0, h - bh)
+        return [x, y, x + bw, y + bh]
+
+    def roi() -> list[tuple[float, float]]:
+        r = orn.uniform(40, 300)
+        cx, cy = orn.uniform(r, w - r), orn.uniform(r, h - r)
+        step = 2 * math.pi / ROI_POINTS
+        return [
+            (
+                cx + r * orn.uniform(0.7, 1.0) * math.cos(k * step),
+                cy + r * orn.uniform(0.7, 1.0) * math.sin(k * step),
+            )
+            for k in range(ROI_POINTS)
+        ]
+
+    shapes["outline_rectangles"] = [(bbox(), ocolor()) for _ in range(OUTLINE_SHAPES["rectangles"])]
+    shapes["outline_polygons"] = [(roi(), ocolor()) for _ in range(OUTLINE_SHAPES["polygons"])]
     (out / "shapes.json").write_text(json.dumps(shapes))
     (out / "text.json").write_text(json.dumps(text))
     (out / "meta.json").write_text(json.dumps({"size": [w, h]}))
@@ -108,7 +135,7 @@ def load_inputs(d: Path) -> dict[str, Any]:
     src["encoded"] = {fmt: (d / f"photo.{fmt}").read_bytes() for fmt in ("jpeg", "png", "webp")}
     shapes = json.loads((d / "shapes.json").read_text())
     src["shapes"] = {
-        k: [([tuple(p) for p in b] if k == "polygons" else tuple(b), tuple(c)) for b, c in v]
+        k: [([tuple(p) for p in b] if k.endswith("polygons") else tuple(b), tuple(c)) for b, c in v]
         for k, v in shapes.items()
     }
     src["text"] = json.loads((d / "text.json").read_text())

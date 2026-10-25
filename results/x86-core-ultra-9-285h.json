@@ -14,7 +14,7 @@
   "Flags": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni lam wbnoinvd dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid bus_lock_detect movdiri movdir64b fsrm md_clear serialize pconfig arch_lbr ibt flush_l1d arch_capabilities",
   "gcc": "14.2.0",
   "branch": "simd/pillow-13",
-  "commit": "28b55224b"
+  "commit": "7238975d1"
  },
  "suites": [
   {
@@ -690,6 +690,18 @@
    "title": "500 lines 5px wide",
    "work": "shapes",
    "n": 500
+  },
+  "draw/outline/rectangles": {
+   "suite": "draw",
+   "title": "500 bounding boxes, 2px outline",
+   "work": "shapes",
+   "n": 500
+  },
+  "draw/outline/polygons": {
+   "suite": "draw",
+   "title": "100 ROI polygons of 12 points, 2px outline",
+   "work": "shapes",
+   "n": 100
   },
   "draw/text": {
    "suite": "draw",
@@ -1858,6 +1870,26 @@
       0.0859216520038899,
       0.08617129100457532
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.004166641003394034,
+     "median": 0.004434162001416553,
+     "runs": 124,
+     "rounds": [
+      0.004315986996516585,
+      0.004166641003394034,
+      0.004181371004960965
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0201693439958035,
+     "median": 0.02041975700558396,
+     "runs": 30,
+     "rounds": [
+      0.02036829400458373,
+      0.020179573002678808,
+      0.0201693439958035
+     ]
     }
    },
    "notes": {},
@@ -2955,6 +2987,26 @@
       0.04829270499612903,
       0.04762166299769888,
       0.047480790002737194
+     ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.002588885006844066,
+     "median": 0.00267001199972583,
+     "runs": 202,
+     "rounds": [
+      0.002599813000415452,
+      0.002591701995697804,
+      0.002588885006844066
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.02010137300385395,
+     "median": 0.021122762002050877,
+     "runs": 29,
+     "rounds": [
+      0.022019905998604372,
+      0.020151833996351343,
+      0.02010137300385395
      ]
     }
    },
@@ -4054,6 +4106,26 @@
       0.04885873300372623,
       0.04903219400148373
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.0026073670014739037,
+     "median": 0.0027027690011891536,
+     "runs": 201,
+     "rounds": [
+      0.0026166820025537163,
+      0.0026073670014739037,
+      0.0026113670028280467
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.020043479002197273,
+     "median": 0.020546318002743647,
+     "runs": 27,
+     "rounds": [
+      0.02147590200183913,
+      0.020043479002197273,
+      0.020179209001071285
+     ]
     }
    },
    "notes": {},
@@ -5151,6 +5223,26 @@
       0.06647974000225076,
       0.06407672700152034,
       0.06530443600058788
+     ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.0025059110048459843,
+     "median": 0.0029630819990416057,
+     "runs": 193,
+     "rounds": [
+      0.0025059110048459843,
+      0.0025137769989669323,
+      0.0028763119989889674
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0027935280013480224,
+     "median": 0.002987088999361731,
+     "runs": 182,
+     "rounds": [
+      0.0028210570017108694,
+      0.0027935280013480224,
+      0.0033621920010773465
      ]
     }
    },
@@ -6250,6 +6342,26 @@
       0.03487132799637038,
       0.03477902300073765
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.0024998129956657067,
+     "median": 0.0026567520035314374,
+     "runs": 221,
+     "rounds": [
+      0.0024998129956657067,
+      0.0025098360056290403,
+      0.0025098730038735084
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0025868540033116005,
+     "median": 0.0026713219995144755,
+     "runs": 212,
+     "rounds": [
+      0.0026265850028721616,
+      0.0025868540033116005,
+      0.0026234039978589863
+     ]
     }
    },
    "notes": {},
@@ -7347,6 +7459,26 @@
       0.029364166999584995,
       0.030366090999450535,
       0.02900299099565018
+     ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.00250203900213819,
+     "median": 0.002629358001286164,
+     "runs": 206,
+     "rounds": [
+      0.0025229389939340763,
+      0.00250203900213819,
+      0.0025668609960121103
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0026059180017909966,
+     "median": 0.0030869260008330457,
+     "runs": 198,
+     "rounds": [
+      0.002617590995214414,
+      0.0026902230019913986,
+      0.0026059180017909966
      ]
     }
    },
@@ -8446,6 +8578,26 @@
       0.029021854999882635,
       0.029881172005843837
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.0025124029998551123,
+     "median": 0.0027161239995621145,
+     "runs": 199,
+     "rounds": [
+      0.0027246989993727766,
+      0.0025124029998551123,
+      0.002566278002632316
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0025881609981297515,
+     "median": 0.0029333350030356087,
+     "runs": 188,
+     "rounds": [
+      0.0029086779977660626,
+      0.0025881609981297515,
+      0.0025955550008802675
+     ]
     }
    },
    "notes": {},
@@ -9474,6 +9626,26 @@
       0.0426645340048708,
       0.04329136999876937
      ]
+    },
+    "draw/outline/rectangles": {
+     "best": 0.004037744001834653,
+     "median": 0.00441208799747983,
+     "runs": 134,
+     "rounds": [
+      0.004037744001834653,
+      0.004040111001813784,
+      0.004052812997542787
+     ]
+    },
+    "draw/outline/polygons": {
+     "best": 0.0017133330038632266,
+     "median": 0.0018237999975099228,
+     "runs": 314,
+     "rounds": [
+      0.0017277139995712787,
+      0.0017133330038632266,
+      0.0017230879966518842
+     ]
     }
    },
    "notes": {
@@ -9529,7 +9701,9 @@
     "cycle/0": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
     "cycle/1": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
     "cycle/2": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
-    "cycle/3": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode."
+    "cycle/3": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
+    "draw/outline/rectangles": "cv2.rectangle and cv2.polylines (closed), thickness 2: centred on the edges, with round joins, it sets about 1.5x the pixels of Pillow's width 2, drawn inside the shape.",
+    "draw/outline/polygons": "cv2.rectangle and cv2.polylines (closed), thickness 2: centred on the edges, with round joins, it sets about 1.5x the pixels of Pillow's width 2, drawn inside the shape."
    },
    "errors": {}
   },

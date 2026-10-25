@@ -18,9 +18,9 @@ Results: **https://desmoteo.github.io/pillow-simd-perf/**
 | libvips (Debian, through pyvips) | yes | yes |
 | ImageMagick 7 (Debian, through Wand) | yes | yes |
 
-109 cases in 18 suites:
+111 cases in 18 suites:
 - pillow-perf's: resize, blur, kernel filters, conversion, composition, right-angle rotation, colour LUT, load and save, and the full cycle.
-- Extended with reduce, unsharp mask, rank filters, arbitrary rotation and perspective, point operations, channel arithmetic, statistics, quantization and drawing.
+- Extended with reduce, unsharp mask, rank filters, arbitrary rotation and perspective, point operations, channel arithmetic, statistics, quantization and drawing (filled shapes, wide lines, text, and unfilled outlines as overlays draw them: bounding boxes and ROI polygons).
 
 Every library runs single-threaded on the same 2560x1600 inputs.
 
