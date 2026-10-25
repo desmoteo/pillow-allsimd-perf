@@ -11,6 +11,10 @@
 #   --only TEXT       only cases whose id contains TEXT (repeatable)
 #   --size WxH        image size (default: 2560x1600)
 #   --keep            keep the remote working directory
+#   --detach          start the remote run in the background on the host
+#                     (it survives this machine going off) and return
+#   --fetch           copy back the results of a detached run, or show its
+#                     log if it hasn't finished
 #
 # Needs docker (or podman) on the target, and network access there for the
 # first image build. The image holds the other libraries and the released
@@ -21,6 +25,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 SIMD_REPO=../pillow-simd REF=HEAD NAME="" TITLE="" CPU=2 SIZE=2560x1600 KEEP=0 TARGET=""
+DETACH=0 FETCH=0
 ONLY=()
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -32,12 +37,28 @@ while [ $# -gt 0 ]; do
         --only) ONLY+=("--only" "$2"); shift 2 ;;
         --size) SIZE=$2; shift 2 ;;
         --keep) KEEP=1; shift ;;
+        --detach) DETACH=1; shift ;;
+        --fetch) FETCH=1; shift ;;
         -h|--help) sed -n '2,20p' "$0"; exit 0 ;;
         -*) echo "unknown option $1" >&2; exit 2 ;;
         *) TARGET=$1; shift ;;
     esac
 done
-[ -n "$TARGET" ] || { sed -n '2,20p' "$0"; exit 2; }
+[ -n "$TARGET" ] || { sed -n '2,24p' "$0"; exit 2; }
+REMOTE_DIR="pillow-simd-perf-run"
+
+if [ $FETCH = 1 ]; then
+    [ -n "$NAME" ] || NAME="${TARGET#*@}"
+    mkdir -p results
+    if scp -q "$TARGET:$REMOTE_DIR/run/results.json" "results/$NAME.json" 2>/dev/null; then
+        echo "==> results/$NAME.json"
+        ssh "$TARGET" "rm -rf $REMOTE_DIR"
+    else
+        echo "==> not finished; the last lines of its log:"
+        ssh "$TARGET" "tail -3 $REMOTE_DIR/run.log"
+    fi
+    exit 0
+fi
 
 COMMIT=$(git -C "$SIMD_REPO" rev-parse --short "$REF")
 BRANCH=$(git -C "$SIMD_REPO" rev-parse --abbrev-ref "$REF" 2>/dev/null || echo "$REF")
@@ -92,9 +113,14 @@ if [ "$TARGET" = local ]; then
     bash -c "$(engine_run "$STAGE")"
     cp "$STAGE/run/results.json" "results/$NAME.json"
 else
-    REMOTE_DIR="pillow-simd-perf-run"
     ssh "$TARGET" "rm -rf $REMOTE_DIR && mkdir -p $REMOTE_DIR"
     tar -C "$STAGE" -cf - run | ssh "$TARGET" "tar -x -C $REMOTE_DIR"
+    if [ $DETACH = 1 ]; then
+        engine_run "\$HOME/$REMOTE_DIR" | ssh "$TARGET" "cat > $REMOTE_DIR/go.sh"
+        ssh "$TARGET" "nohup bash $REMOTE_DIR/go.sh > $REMOTE_DIR/run.log 2>&1 < /dev/null &"
+        echo "==> running on $TARGET ($BRANCH @ $COMMIT); later: $0 --fetch --name $NAME $TARGET"
+        exit 0
+    fi
     ssh "$TARGET" "$(engine_run "\$HOME/$REMOTE_DIR")"
     scp -q "$TARGET:$REMOTE_DIR/run/results.json" "results/$NAME.json"
     [ $KEEP = 1 ] || ssh "$TARGET" "rm -rf $REMOTE_DIR"
