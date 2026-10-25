@@ -46,10 +46,12 @@
         runs once to warm up, then at least 3 times and for at least 0.2&nbsp;s (at most
         4&nbsp;s). The fastest run of all rounds counts. Throughput is megapixels of the
         <em>source</em> image per second; drawing cases count shapes or lines per second.</li>
-      <li>On the x86 laptop, turbo is off (<code>intel_pstate/no_turbo</code>), so the core
-        runs at its 2.9&nbsp;GHz base clock. With turbo on, the clock moved between 2.9 and
-        5.4&nbsp;GHz during a run, so whichever library ran during a slow spell looked about
-        twice as slow. The Jetson runs at a fixed clock.</li>
+      <li>On the x86 laptop, turbo is off (<code>intel_pstate/no_turbo</code>) and the power
+        profile is <code>performance</code>, so the core runs at its 2.9&nbsp;GHz base clock.
+        With turbo on, the clock moved between 2.9 and 5.4&nbsp;GHz during a run, so whichever
+        library ran during a slow spell looked about twice as slow. Under the
+        <code>balanced</code> profile it kept dropping to 2.3&nbsp;GHz even with turbo off.
+        The Jetson runs at a fixed clock.</li>
       <li>libvips is lazy, so its cases end by computing the result into memory, and its
         operation cache is off. ImageMagick modifies images in place, so each of its runs
         works on a clone, which costs about what Pillow spends allocating its output.</li>
