@@ -10,6 +10,7 @@
 #   --cpu N           CPU to pin the container to (default: 2)
 #   --only TEXT       only cases whose id contains TEXT (repeatable)
 #   --size WxH        image size (default: 2560x1600)
+#   --rounds N        interleaved rounds; the fastest run of all counts (default: 3)
 #   --keep            keep the remote working directory
 #   --detach          start the remote run in the background on the host
 #                     (it survives this machine going off) and return
@@ -25,7 +26,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 SIMD_REPO=../pillow-simd REF=HEAD NAME="" TITLE="" CPU=2 SIZE=2560x1600 KEEP=0 TARGET=""
-DETACH=0 FETCH=0
+DETACH=0 FETCH=0 ROUNDS=3
 ONLY=()
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -36,15 +37,16 @@ while [ $# -gt 0 ]; do
         --cpu) CPU=$2; shift 2 ;;
         --only) ONLY+=("--only" "$2"); shift 2 ;;
         --size) SIZE=$2; shift 2 ;;
+        --rounds) ROUNDS=$2; shift 2 ;;
         --keep) KEEP=1; shift ;;
         --detach) DETACH=1; shift ;;
         --fetch) FETCH=1; shift ;;
-        -h|--help) sed -n '2,20p' "$0"; exit 0 ;;
+        -h|--help) sed -n '2,23p' "$0"; exit 0 ;;
         -*) echo "unknown option $1" >&2; exit 2 ;;
         *) TARGET=$1; shift ;;
     esac
 done
-[ -n "$TARGET" ] || { sed -n '2,24p' "$0"; exit 2; }
+[ -n "$TARGET" ] || { sed -n '2,23p' "$0"; exit 2; }
 REMOTE_DIR="pillow-simd-perf-run"
 
 if [ $FETCH = 1 ]; then
@@ -96,7 +98,7 @@ for b in "\${builds[@]}"; do
     variants+=(--variant "\$name=/work/variants/\$name")
 done
 python3 bench/perf.py "\${variants[@]}" --lib opencv --lib vips --lib wand \
-    --size $SIZE --title "$TITLE" --extra "branch=$BRANCH" --extra "commit=$COMMIT" \
+    --size $SIZE --rounds $ROUNDS --title "$TITLE" --extra "branch=$BRANCH" --extra "commit=$COMMIT" \
     ${ONLY[@]+"${ONLY[@]}"} --out /work/results.json
 EOF
 
