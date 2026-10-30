@@ -1,0 +1,14 @@
+{
+ "machines": [
+  {
+   "id": "x86-core-ultra-9-285h",
+   "file": "x86-core-ultra-9-285h.json",
+   "label": "x86-64: Intel Core Ultra 9 285H (laptop, turbo off)"
+  },
+  {
+   "id": "arm64-jetson-orin",
+   "file": "arm64-jetson-orin.json",
+   "label": "arm64: NVIDIA Jetson Orin (Cortex-A78AE)"
+  }
+ ]
+}

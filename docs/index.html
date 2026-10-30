@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pillow-SIMD performance</title>
+<meta name="description" content="Pillow-SIMD against Pillow, OpenCV, libvips and ImageMagick on x86-64 and arm64.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Pillow-SIMD performance</h1>
+    <p>Pillow-SIMD 13 (the <code>simd/pillow-13</code> branch of
+      <a href="https://github.com/desmoteo/pillow-simd">desmoteo/pillow-simd</a>) against
+      Pillow 13.0, the last Pillow-SIMD release, OpenCV, libvips and ImageMagick, on one
+      x86-64 and one arm64 machine. Each library runs single-threaded on the same
+      2560&times;1600 images. Bars show throughput: longer is faster. The second number is
+      the speed relative to Pillow 13.0.0.</p>
+  </header>
+
+  <div class="controls" role="region" aria-label="Filters">
+    <div class="seg" id="machines" role="group" aria-label="Machine"></div>
+    <div class="chips" id="families" role="group" aria-label="Libraries"></div>
+    <label class="small">Jump to <select id="jump"></select></label>
+  </div>
+
+  <p class="machine-meta" id="meta"></p>
+  <div class="legend" id="legend"></div>
+
+  <section class="suite" id="summary"></section>
+  <main id="suites"></main>
+
+  <div class="method" id="method">
+    <h2>How it's measured</h2>
+    <ul>
+      <li>Every library runs in its own process, pinned to one CPU core of the container
+        (<code>--cpuset-cpus</code>), with one thread: <code>cv2.setNumThreads(1)</code>,
+        <code>VIPS_CONCURRENCY=1</code>, <code>MAGICK_THREAD_LIMIT=1</code>. Pillow never uses
+        more than one.</li>
+      <li>The inputs are a 2560&times;1600 photo-like image (smooth gradients with a little
+        noise), a second one for two-image operations, an RGBA version with a soft alpha, its
+        L version, and the photo as JPEG q90, PNG and WebP q90. They're made once and loaded
+        into each library's own image type before timing.</li>
+      <li>The libraries take turns suite by suite, for three rounds. In each round a case
+        runs once to warm up, then at least 3 times and for at least 0.2&nbsp;s (at most
+        4&nbsp;s). The fastest run of all rounds counts. Throughput is megapixels of the
+        <em>source</em> image per second; drawing cases count shapes or lines per second.</li>
+      <li>On the x86 laptop, turbo is off (<code>intel_pstate/no_turbo</code>), so the core
+        runs at its 2.9&nbsp;GHz base clock. With turbo on, the clock moved between 2.9 and
+        5.4&nbsp;GHz during a run, so whichever library ran during a slow spell looked about
+        twice as slow. The Jetson runs at a fixed clock.</li>
+      <li>libvips is lazy, so its cases end by computing the result into memory, and its
+        operation cache is off. ImageMagick modifies images in place, so each of its runs
+        works on a clone, which costs about what Pillow spends allocating its output.</li>
+      <li>Not every library has every operation, and some differ from Pillow's. Those
+        differences are footnoted under each chart. A missing bar means the library has no
+        such operation.</li>
+      <li>Pillow 13.0.0 is the PyPI wheel with its bundled codecs. The Pillow-SIMD builds are
+        compiled in the container with GCC against Debian's codec libraries. Codec timings
+        therefore also compare library builds, not only Pillow's code.</li>
+    </ul>
+    <h2>Versions</h2>
+    <div class="tablewrap"><table class="data" id="versions"></table></div>
+    <h2>Run it yourself</h2>
+    <p>The benchmark and the page live in
+      <a href="https://github.com/desmoteo/pillow-simd-perf">desmoteo/pillow-simd-perf</a>.
+      With Docker on the target machine:</p>
+<pre>git clone https://github.com/desmoteo/pillow-simd
+git clone https://github.com/desmoteo/pillow-simd-perf
+cd pillow-simd-perf
+git -C ../pillow-simd checkout simd/pillow-13
+./run.sh local                       # this machine
+./run.sh --cpu 2 user@arm64-host     # another one, over SSH
+python3 tools/publish.py             # copy results/ into docs/data/</pre>
+  </div>
+  <footer>Inspired by <a href="https://python-pillow.org/pillow-perf/">pillow-perf</a>.</footer>
+</div>
+<div id="tip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
