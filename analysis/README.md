@@ -11,6 +11,7 @@ win, and how accurate each library's kernels are. They use the same inputs as
 | `parts.py [names]` | blur and resize split into their passes (horizontal only, vertical only, both), premultiply and unpremultiply |
 | `accuracy.py [names]` | time and error against float64 references of the same operation (Gaussian, box, YCbCr both ways, HSV, bilinear upscale, rotation) for Pillow and for OpenCV with `ALGO_HINT_ACCURATE` and `ALGO_HINT_APPROX` |
 | `vipsacc.py` | libvips `gaussblur` against the same references, with its vector path on, or off with `VIPS_NOVECTOR=1` |
+| `drawprof.py` | the drawing cases split: polygons at full size and scaled down, lines 1 and 5 px wide, text and its parts, a profile of text drawing |
 
 Errors are in 8-bit levels against the reference rounded to the nearest
 integer, over the interior of the image: the maximum, the mean absolute error
@@ -31,7 +32,7 @@ docker run --rm --cpuset-cpus=2 --user $(id -u):$(id -g) -e HOME=/tmp \
 ```
 
 `results-2026-10-31/` holds the outputs the documents quote. x86: the Intel
-Core Ultra 9 285H (performance profile, turbo off), AVX2 builds of d9203c783
-(`gapcheck`, `parts`) and 28b55224b (`accuracy`, `vipsacc`), which differ
-only in the kernel filters. arm64: the Jetson Orin, the NEON build of
-28b55224b.
+Core Ultra 9 285H (performance profile, turbo off), AVX2 builds of
+d9203c783 (`gapcheck`, `parts`) and 28b55224b (`accuracy`, `vipsacc`,
+`drawprof`), which differ only in the kernel filters. arm64: the Jetson
+Orin, the NEON build of 28b55224b.

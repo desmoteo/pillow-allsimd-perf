@@ -1,0 +1,25 @@
+Image.new RGB                0.63 ms
+polygons (200 hexagons)      24.67 ms
+polygons scaled 1/40          0.67 ms
+lines 5px (500)               1.38 ms
+lines 1px (500)               0.87 ms
+text (100 lines)              2.62 ms
+  font.getmask2 x100          1.37 ms
+  font.getbbox x100           0.20 ms
+         56341 function calls in 0.070 seconds
+
+   Ordered by: internal time
+   List reduced from 34 to 8 due to restriction <8>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     2000    0.027    0.000    0.031    0.000 {method 'render' of 'Font' objects}
+     2000    0.019    0.000    0.019    0.000 {method 'draw_bitmap' of 'ImagingDraw' objects}
+     2000    0.004    0.000    0.058    0.000 /build/PIL/ImageDraw.py:584(draw_text)
+     2000    0.004    0.000    0.069    0.000 /build/PIL/ImageDraw.py:531(text)
+     2000    0.002    0.000    0.004    0.000 /build/PIL/ImageText.py:328(_split)
+     2000    0.002    0.000    0.002    0.000 {built-in method PIL._imaging.fill}
+     2000    0.002    0.000    0.034    0.000 /build/PIL/ImageFont.py:566(getmask2)
+       20    0.002    0.000    0.070    0.004 /perf/analysis/drawprof.py:60(text)
+
+
+
