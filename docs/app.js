@@ -7,6 +7,7 @@ const FAMILIES = [
   { id: "upstream", label: "Pillow 13.0", color: "--upstream" },
   { id: "release", label: "Pillow-SIMD 12.1 release", color: "--release" },
   { id: "branch", label: "Pillow-SIMD 13 (this branch)", color: "--branch" },
+  { id: "fast", label: "Pillow-SIMD 13 fast mode", color: "--fast" },
   { id: "opencv", label: "OpenCV", color: "--other" },
   { id: "vips", label: "libvips", color: "--other" },
   { id: "wand", label: "ImageMagick", color: "--other" },
@@ -31,6 +32,9 @@ function el(tag, attrs = {}, ...kids) {
 /* Variant name -> label, family and sort key. */
 function describe(name, v) {
   let m;
+  if ((m = name.match(/^branch-(\w+)-fast$/))) {
+    return { label: `Pillow-SIMD 13 ${ISA[m[1]] || m[1]} fast`, fam: "fast", order: 30 + ISA_ORDER.indexOf(m[1]) };
+  }
   if (name.startsWith("branch-")) {
     const isa = name.slice(7);
     return { label: `Pillow-SIMD 13 ${ISA[isa] || isa}`, fam: "branch", order: 20 + ISA_ORDER.indexOf(isa) };
@@ -148,7 +152,7 @@ function caseCard(cid, meta, shared) {
       notes.push(`${noteMark} ${d.label.split(" ")[0]}: ${note}`);
     }
     if (!r) {
-      if (d.fam === "upstream" || d.fam === "branch" || d.fam === "release") rows.push({ label: d.label, value: null });
+      if (["upstream", "branch", "fast", "release"].includes(d.fam)) rows.push({ label: d.label, value: null });
       continue;
     }
     rows.push({

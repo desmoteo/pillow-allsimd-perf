@@ -222,7 +222,11 @@ def machine() -> dict:
 def run_worker(kind: str, path: str | None, inputs: Path, args: argparse.Namespace, suite: str) -> dict:
     env = dict(os.environ, **SINGLE_THREAD_ENV)
     if path:
+        # PATH[,KEY=VALUE...]: the variant's build and its environment, e.g.
+        # PILLOW_SIMD_FAST=1 for the same build in fast mode
+        path, *extra = path.split(",")
         env["PYTHONPATH"] = path
+        env.update(kv.split("=", 1) for kv in extra)
     cmd = [sys.executable, str(Path(__file__).resolve()), "--worker", kind, "--inputs", str(inputs)]
     cmd += ["--min-runs", str(args.min_runs), "--min-time", str(args.min_time), "--max-time", str(args.max_time)]
     cmd += ["--suite", suite]
@@ -238,7 +242,10 @@ def run_worker(kind: str, path: str | None, inputs: Path, args: argparse.Namespa
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--variant", action="append", default=[], metavar="NAME=PATH", help="a Pillow build")
+    ap.add_argument(
+        "--variant", action="append", default=[], metavar="NAME=PATH[,KEY=VALUE...]",
+        help="a Pillow build, and environment variables for it",
+    )
     ap.add_argument("--lib", action="append", default=[], choices=sorted(LIBS))
     ap.add_argument("--only", action="append", default=[], help="cases whose id contains this")
     ap.add_argument("--size", default="2560x1600")
@@ -269,7 +276,7 @@ def main() -> int:
         ap.error("at least one --variant (the first makes the inputs)")
     with tempfile.TemporaryDirectory() as tmp:
         inputs = Path(tmp)
-        env = dict(os.environ, PYTHONPATH=variants[0][1])
+        env = dict(os.environ, PYTHONPATH=variants[0][1].split(",")[0])
         subprocess.run(
             [sys.executable, __file__, "--prepare", tmp, "--size", args.size], env=env, check=True
         )
