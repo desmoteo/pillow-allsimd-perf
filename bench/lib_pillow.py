@@ -205,6 +205,9 @@ def cases(src: dict[str, Any]) -> dict[str, Callable[[], object]]:
             im = Image.open(io.BytesIO(jpeg))
             im.draft("RGB", (320, 200))
             im.thumbnail((320, 200), R.BICUBIC)
+            # draft() may already give the size, and thumbnail() then returns
+            # without decoding
+            im.load()
             return im
 
         c["codec/thumbnail/jpeg"] = thumbnail
