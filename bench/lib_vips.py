@@ -26,6 +26,7 @@ NOTES = {
     "rotate/": "rotate() enlarges the canvas to fit the rotated image.",
     "composite/alpha": "composite2 'over', in float and premultiplied.",
     "codec/thumbnail": "thumbnail_buffer: shrink-on-load, then resize.",
+    "codec/encode/png": "Debian's libspng, filter all (adaptive, as the others); the default, none, writes 60% larger files.",
     "codec/": "Debian's libjpeg-turbo, libspng and libwebp.",
     "cycle/": "One lazy pipeline: decode, rot, resize (cubic), gaussblur, jpegsave.",
 }
@@ -139,7 +140,9 @@ def cases(src: dict[str, Any]) -> dict[str, Callable[[], object]]:
         data = enc[fmt]
         c[f"codec/decode/{fmt}"] = mem(lambda d=data: pyvips.Image.new_from_buffer(d, "", access="sequential"))
     c["codec/encode/jpeg"] = lambda: rgb.write_to_buffer(".jpg", Q=85)
-    c["codec/encode/png"] = lambda: rgb.write_to_buffer(".png", compression=6)
+    # filter="all": adaptive row filters like Pillow's, libpng's and
+    # ImageMagick's; libvips' default, no filter, writes files 60% larger
+    c["codec/encode/png"] = lambda: rgb.write_to_buffer(".png", compression=6, filter="all")
     c["codec/encode/webp"] = lambda: rgb.write_to_buffer(".webp", Q=80)
     jpeg = enc["jpeg"]
     c["codec/thumbnail/jpeg"] = mem(lambda: pyvips.Image.thumbnail_buffer(jpeg, 320, height=200))
