@@ -14,9 +14,9 @@ Results: **https://desmoteo.github.io/pillow-allsimd-perf/**
 |---|---|---|
 | Pillow 13.0.0 (PyPI wheel) | yes | yes |
 | Pillow-SIMD 12.1.1.post0 (last release), SSE4 and AVX2 | yes | no, it has no arm64 code |
-| Pillow-AllSIMD 13 (`simd/pillow-13`), scalar, SSE4, AVX2, AVX-VNNI | yes, AVX-VNNI if the CPU has it | |
-| Pillow-AllSIMD 13 (`simd/pillow-13`), scalar and NEON | | yes |
-| Pillow-AllSIMD 13 AVX2 or NEON in fast mode (`PILLOW_ALLSIMD_FAST=1`) | yes | yes |
+| Pillow-AllSIMD 13 (`simd/pillow-13`) in exact mode (`PILLOW_ALLSIMD_FAST=0`), scalar, SSE4, AVX2, AVX-VNNI | yes, AVX-VNNI if the CPU has it | |
+| Pillow-AllSIMD 13 (`simd/pillow-13`) in exact mode, scalar and NEON | | yes |
+| Pillow-AllSIMD 13 AVX2 or NEON in fast mode (`PILLOW_ALLSIMD_FAST=1`), its default since October 2026 | yes | yes |
 | OpenCV (opencv-python-headless) | yes | yes |
 | libvips (Debian, through pyvips) | yes | yes |
 | ImageMagick 7 (Debian, through Wand) | yes | yes |
