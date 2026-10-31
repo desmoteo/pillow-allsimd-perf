@@ -1,0 +1,18 @@
+libvips 8.16.1, vector path on
+Gaussian sigma 1
+  gaussblur default (min_ampl 0.2)       7.38 ms   max   3  mean 0.393  differ  38.6%
+  gaussblur min_ampl 0.01                8.29 ms   max   5  mean 1.982  differ  93.2%
+  gaussblur float precision             62.62 ms   max   3  mean 0.366  differ  36.2%
+Gaussian sigma 2
+  gaussblur default (min_ampl 0.2)       9.31 ms   max   2  mean 0.277  differ  27.6%
+  gaussblur min_ampl 0.01               11.95 ms   max   3  mean 0.993  differ  79.8%
+  gaussblur float precision            104.21 ms   max   2  mean 0.245  differ  24.4%
+libvips 8.16.1, vector path off
+Gaussian sigma 1
+  gaussblur default (min_ampl 0.2)      76.05 ms   max   3  mean 0.393  differ  38.6%
+  gaussblur min_ampl 0.01               95.96 ms   max   1  mean 0.130  differ  13.0%
+  gaussblur float precision             62.61 ms   max   3  mean 0.366  differ  36.2%
+Gaussian sigma 2
+  gaussblur default (min_ampl 0.2)     118.78 ms   max   2  mean 0.279  differ  27.8%
+  gaussblur min_ampl 0.01              165.26 ms   max   1  mean 0.094  differ   9.4%
+  gaussblur float precision            103.99 ms   max   2  mean 0.245  differ  24.4%

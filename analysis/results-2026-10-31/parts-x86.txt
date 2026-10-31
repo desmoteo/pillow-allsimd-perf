@@ -1,0 +1,20 @@
+new image RGB (dirty)                      0.40 ms      26 faults
+copy RGB                                   1.26 ms       0 faults
+box r2 h+v                                 9.00 ms     814 faults
+box r2 h only                              2.94 ms       0 faults
+box r2 v only                              4.48 ms     392 faults
+box r10 h+v                               10.50 ms     814 faults
+box r10 h only                             4.16 ms       0 faults
+box r10 v only                             4.75 ms     392 faults
+gauss r1 h+v                              18.68 ms     814 faults
+gauss r1 h only                            7.39 ms       0 faults
+gauss r1 v only                            7.89 ms       0 faults
+resize RGB up bilinear                    25.03 ms    3449 faults
+resize RGB up bilinear h only              9.60 ms     999 faults
+resize RGB up bilinear v only              7.21 ms    1004 faults
+resize RGBA up bilinear                   45.02 ms    4929 faults
+RGBA premultiply (RGBa)                    1.38 ms       0 faults
+RGBa unpremultiply                         3.87 ms       0 faults
+resize RGB 320x200 lanczos                 3.32 ms       0 faults
+resize RGB 320x200 lanczos h only          2.87 ms       0 faults
+resize RGB 320x200 lanczos v only          4.15 ms       0 faults
