@@ -1,4 +1,4 @@
-"""Pillow and Pillow-SIMD: every case in the catalogue."""
+"""Pillow, Pillow-SIMD and Pillow-AllSIMD: every case in the catalogue."""
 
 from __future__ import annotations
 

@@ -3,22 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pillow-SIMD performance</title>
-<meta name="description" content="Pillow-SIMD against Pillow, OpenCV, libvips and ImageMagick on x86-64 and arm64.">
+<title>Pillow-AllSIMD performance</title>
+<meta name="description" content="Pillow-AllSIMD against Pillow, Pillow-SIMD, OpenCV, libvips and ImageMagick on x86-64 and arm64.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>Pillow-SIMD performance</h1>
-    <p>Pillow-SIMD 13 (the <code>simd/pillow-13</code> branch of
-      <a href="https://github.com/desmoteo/pillow-simd">desmoteo/pillow-simd</a>) against
+    <h1>Pillow-AllSIMD performance</h1>
+    <p><a href="https://github.com/desmoteo/pillow-allsimd">Pillow-AllSIMD</a> 13 (the
+      <code>simd/pillow-13</code> branch), a fork of
+      <a href="https://github.com/uploadcare/pillow-simd">Pillow-SIMD</a> and
+      <a href="https://github.com/python-pillow/Pillow">Pillow</a>, against
       Pillow 13.0, the last Pillow-SIMD release, OpenCV, libvips and ImageMagick, on one
       x86-64 and one arm64 machine. Each library runs single-threaded on the same
       2560&times;1600 images. Bars show throughput: longer is faster. The second number is
       the speed relative to Pillow 13.0.0. <em>Fast</em> is the branch's AVX2 or NEON
-      build again with <code>PILLOW_SIMD_FAST=1</code>: kernels whose pixels may differ from
-      Pillow's by a few levels (<a href="https://github.com/desmoteo/pillow-simd/blob/simd/pillow-13/SIMD_FAST_KERNELS.md">the
+      build again with <code>PILLOW_ALLSIMD_FAST=1</code>: kernels whose pixels may differ from
+      Pillow's by a few levels (<a href="https://github.com/desmoteo/pillow-allsimd/blob/simd/pillow-13/SIMD_FAST_KERNELS.md">the
       fast kernels</a>); operations without one run the exact kernels, as in the build
       above it.</p>
   </header>
@@ -62,7 +64,7 @@
       <li>Not every library has every operation, and some differ from Pillow's. Those
         differences are footnoted under each chart. A missing bar means the library has no
         such operation.</li>
-      <li>Pillow 13.0.0 is the PyPI wheel with its bundled codecs. The Pillow-SIMD builds are
+      <li>Pillow 13.0.0 is the PyPI wheel with its bundled codecs. The Pillow-AllSIMD builds are
         compiled in the container with GCC against Debian's codec libraries. Codec timings
         therefore also compare library builds, not only Pillow's code.</li>
     </ul>
@@ -70,12 +72,12 @@
     <div class="tablewrap"><table class="data" id="versions"></table></div>
     <h2>Run it yourself</h2>
     <p>The benchmark and the page live in
-      <a href="https://github.com/desmoteo/pillow-simd-perf">desmoteo/pillow-simd-perf</a>.
+      <a href="https://github.com/desmoteo/pillow-allsimd-perf">desmoteo/pillow-allsimd-perf</a>.
       With Docker on the target machine:</p>
-<pre>git clone https://github.com/desmoteo/pillow-simd
-git clone https://github.com/desmoteo/pillow-simd-perf
-cd pillow-simd-perf
-git -C ../pillow-simd checkout simd/pillow-13
+<pre>git clone https://github.com/desmoteo/pillow-allsimd
+git clone https://github.com/desmoteo/pillow-allsimd-perf
+cd pillow-allsimd-perf
+git -C ../pillow-allsimd checkout simd/pillow-13
 ./run.sh local                       # this machine
 ./run.sh --cpu 2 user@arm64-host     # another one, over SSH
 python3 tools/publish.py             # copy results/ into docs/data/</pre>
