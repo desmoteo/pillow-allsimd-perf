@@ -100,9 +100,10 @@ for b in "\${builds[@]}"; do
     (cd simd-src && python3 -m pip install -q --no-deps --no-build-isolation \
         -C simd=\$b --target /work/variants/\$name . >/work/build-\$name.log 2>&1) \
         || { tail -20 /work/build-\$name.log; exit 1; }
-    variants+=(--variant "\$name=/work/variants/\$name")
-    # the main build again in fast mode (Image.set_fast; PILLOW_SIMD_FAST is
-    # the variable's name before the rename to Pillow-AllSIMD)
+    # every build in exact mode, and the main build again in fast mode, the
+    # branch's default since October 2026 (PILLOW_SIMD_FAST is the
+    # variable's name before the rename to Pillow-AllSIMD)
+    variants+=(--variant "\$name=/work/variants/\$name,PILLOW_ALLSIMD_FAST=0,PILLOW_SIMD_FAST=0")
     if [ \$b = avx2 ] || [ \$b = neon ]; then
         variants+=(--variant "\$name-fast=/work/variants/\$name,PILLOW_ALLSIMD_FAST=1,PILLOW_SIMD_FAST=1")
     fi

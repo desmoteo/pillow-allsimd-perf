@@ -18,11 +18,12 @@
       Pillow 13.0, the last Pillow-SIMD release, OpenCV, libvips and ImageMagick, on one
       x86-64 and one arm64 machine. Each library runs single-threaded on the same
       2560&times;1600 images. Bars show throughput: longer is faster. The second number is
-      the speed relative to Pillow 13.0.0. <em>Fast</em> is the branch's AVX2 or NEON
-      build again with <code>PILLOW_ALLSIMD_FAST=1</code>: kernels whose pixels may differ from
-      Pillow's by a few levels (<a href="https://github.com/desmoteo/pillow-allsimd/blob/simd/pillow-13/SIMD_FAST_KERNELS.md">the
-      fast kernels</a>); operations without one run the exact kernels, as in the build
-      above it.</p>
+      the speed relative to Pillow 13.0.0. The branch's builds run in <em>exact</em> mode
+      (<code>PILLOW_ALLSIMD_FAST=0</code>, Pillow's arithmetic); <em>fast</em> is its AVX2 or
+      NEON build again in fast mode, the default since October 2026: kernels whose pixels
+      may differ from Pillow's by a few levels (<a href="https://github.com/desmoteo/pillow-allsimd/blob/simd/pillow-13/SIMD_FAST_KERNELS.md">the
+      fast kernels</a>); operations without one run the exact kernels, as in the exact
+      build above it.</p>
   </header>
 
   <div class="controls" role="region" aria-label="Filters">

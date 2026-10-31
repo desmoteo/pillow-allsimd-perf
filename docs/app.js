@@ -6,8 +6,8 @@ const ISA_ORDER = ["scalar", "sse4", "avx2", "avxvnni", "neon"];
 const FAMILIES = [
   { id: "upstream", label: "Pillow 13.0", color: "--upstream" },
   { id: "release", label: "Pillow-SIMD 12.1 release", color: "--release" },
-  { id: "branch", label: "Pillow-AllSIMD 13", color: "--branch" },
-  { id: "fast", label: "Pillow-AllSIMD 13 fast mode", color: "--fast" },
+  { id: "branch", label: "Pillow-AllSIMD 13 exact mode", color: "--branch" },
+  { id: "fast", label: "Pillow-AllSIMD 13 fast mode (default)", color: "--fast" },
   { id: "opencv", label: "OpenCV", color: "--other" },
   { id: "vips", label: "libvips", color: "--other" },
   { id: "wand", label: "ImageMagick", color: "--other" },
@@ -37,7 +37,7 @@ function describe(name, v) {
   }
   if (name.startsWith("branch-")) {
     const isa = name.slice(7);
-    return { label: `Pillow-AllSIMD 13 ${ISA[isa] || isa}`, fam: "branch", order: 20 + ISA_ORDER.indexOf(isa) };
+    return { label: `Pillow-AllSIMD 13 ${ISA[isa] || isa} exact`, fam: "branch", order: 20 + ISA_ORDER.indexOf(isa) };
   }
   if ((m = name.match(/^pillow-simd-(\d+\.\d+\.\d+)(?:\.post\d+)?-(\w+)$/))) {
     return { label: `Pillow-SIMD ${m[1]} ${ISA[m[2]] || m[2]}`, fam: "release", order: 10 + ISA_ORDER.indexOf(m[2]) };
