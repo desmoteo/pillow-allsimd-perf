@@ -14,6 +14,9 @@ cv2.setNumThreads(1)
 NOTES = {
     "scale/": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos "
     "filters don't antialias when shrinking. Enlarging uses the named filter.",
+    "scale/RGBA": "Shrinking uses INTER_AREA: OpenCV's linear, cubic and Lanczos "
+    "filters don't antialias when shrinking. Enlarging uses the named filter. "
+    "No premultiplication of alpha, which Pillow does around the resize.",
     "rotate/RGB/30": "warpAffine about the centre, same canvas.",
     "rotate/RGBA": "warpAffine about the centre, same canvas; no premultiplication.",
     "convert/RGB/YCbCr": "COLOR_RGB2YCrCb (Cr and Cb swapped).",
