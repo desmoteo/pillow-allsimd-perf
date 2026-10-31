@@ -1,6 +1,7 @@
 """merge_rerun.py FULL RERUN: replaces FULL's results for every case RERUN
-measured (all variants) and takes RERUN's commit, for a partial rerun at a
-commit whose code differs from FULL's only in those cases' kernels."""
+measured (all variants), takes RERUN's case list and commit: for a partial
+rerun at a commit whose code differs from FULL's only in those cases'
+kernels, or of cases added to the benchmark."""
 
 import json
 import sys
@@ -17,6 +18,9 @@ for name, v in rerun["variants"].items():
     for key in ("notes", "errors"):
         for case, r in v.get(key, {}).items():
             dst.setdefault(key, {})[case] = r
+# The rerun's case list is the full, current one: new cases get their titles.
+full["cases"] = rerun["cases"]
+full["suites"] = rerun["suites"]
 old = full["machine"]["commit"]
 full["machine"]["commit"] = rerun["machine"]["commit"]
 full["date"] = rerun["date"]

@@ -7,7 +7,7 @@ from typing import Any, Callable
 import cv2
 import numpy as np
 
-from common import BLUR_RADII, DRAW_SHAPES, SCALE_DESTS, SCALE_FILTERS
+from common import BLUR_RADII, DRAW_SHAPES, OUTLINE_WIDTH, SCALE_DESTS, SCALE_FILTERS
 
 cv2.setNumThreads(1)
 
@@ -27,6 +27,8 @@ NOTES = {
     "chops/RGB/screen": "255 - multiply(255 - a, 255 - b) / 255.",
     "draw/": "cv2.fillPoly, ellipse, rectangle and line, filled, no antialiasing.",
     "draw/text": "cv2.putText with a Hershey font: not comparable glyphs.",
+    "draw/outline/": "cv2.rectangle and cv2.polylines (closed), thickness 2: centred on the edges, "
+    "with round joins, it sets about 1.5x the pixels of Pillow's width 2, drawn inside the shape.",
     "codec/thumbnail": "IMREAD_REDUCED_COLOR_8 (DCT scaling), then INTER_AREA.",
     "cycle/": "imdecode, rotate, resize INTER_AREA, GaussianBlur, imencode.",
     "codec/": "OpenCV's bundled libjpeg-turbo, libpng and libwebp.",
@@ -200,6 +202,26 @@ def cases(src: dict[str, Any]) -> dict[str, Callable[[], object]]:
 
     for kind in DRAW_SHAPES:
         c[f"draw/{kind}"] = draw(kind)
+
+    def outline(kind: str) -> Callable[[], object]:
+        if kind == "polygons":
+            items = [(np.array(b, np.int32), col) for b, col in shapes["outline_polygons"]]
+        else:
+            items = [(tuple(int(v) for v in b), col) for b, col in shapes["outline_rectangles"]]
+
+        def run() -> object:
+            canvas = np.zeros((h, w, 3), np.uint8)
+            for b, col in items:
+                if kind == "polygons":
+                    cv2.polylines(canvas, [b], True, col, OUTLINE_WIDTH)
+                else:
+                    cv2.rectangle(canvas, b[:2], b[2:], col, OUTLINE_WIDTH)
+            return canvas
+
+        return run
+
+    for kind in ("rectangles", "polygons"):
+        c[f"draw/outline/{kind}"] = outline(kind)
 
     def text() -> object:
         canvas = np.zeros((h, w, 3), np.uint8)

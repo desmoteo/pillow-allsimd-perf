@@ -43,6 +43,11 @@ SCALE_DESTS = [(26, 16), (320, 200), (2048, 1280), (5478, 3424)]
 SCALE_FILTERS = ["bilinear", "bicubic", "lanczos"]
 BLUR_RADII = [1, 10, 30]
 DRAW_SHAPES = {"polygons": 200, "ellipses": 200, "rectangles": 500, "lines": 500}
+# Outlines as overlays draw them: detection bounding boxes and ROI polygons,
+# OUTLINE_WIDTH pixels wide, unfilled.
+OUTLINE_SHAPES = {"rectangles": 500, "polygons": 100}
+OUTLINE_WIDTH = 2
+ROI_POINTS = 12
 
 
 def _meta() -> dict[str, dict]:
@@ -118,6 +123,10 @@ def _meta() -> dict[str, dict]:
     add("quantize/fastoctree", "Fast octree, 256 colours")
     for shape, n in DRAW_SHAPES.items():
         add(f"draw/{shape}", f"{n} filled {shape}" if shape != "lines" else f"{n} lines 5px wide", "shapes", n)
+    n = OUTLINE_SHAPES["rectangles"]
+    add("draw/outline/rectangles", f"{n} bounding boxes, {OUTLINE_WIDTH}px outline", "shapes", n)
+    n = OUTLINE_SHAPES["polygons"]
+    add("draw/outline/polygons", f"{n} ROI polygons of {ROI_POINTS} points, {OUTLINE_WIDTH}px outline", "shapes", n)
     add("draw/text", "100 lines of text", "lines", 100)
     for fmt, what in (("jpeg", "JPEG q85"), ("png", "PNG level 6"), ("webp", "WebP q80")):
         add(f"codec/decode/{fmt}", f"Decode {what} RGB")

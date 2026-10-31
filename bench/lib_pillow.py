@@ -5,7 +5,7 @@ from __future__ import annotations
 import io
 from typing import Any, Callable
 
-from common import BLUR_RADII, DRAW_SHAPES, SCALE_DESTS, SCALE_FILTERS
+from common import BLUR_RADII, DRAW_SHAPES, OUTLINE_WIDTH, SCALE_DESTS, SCALE_FILTERS
 
 from PIL import (
     Image,
@@ -148,6 +148,24 @@ def cases(src: dict[str, Any]) -> dict[str, Callable[[], object]]:
 
     for kind in DRAW_SHAPES:
         c[f"draw/{kind}"] = draw(kind)
+
+    def outline(kind: str) -> Callable[[], object]:
+        items = shapes[f"outline_{kind}"]
+
+        def run() -> object:
+            canvas = Image.new("RGB", (w, h))
+            d = ImageDraw.Draw(canvas)
+            for shape, color in items:
+                if kind == "polygons":
+                    d.polygon(shape, outline=color, width=OUTLINE_WIDTH)
+                else:
+                    d.rectangle(shape, outline=color, width=OUTLINE_WIDTH)
+            return canvas
+
+        return run
+
+    for kind in ("rectangles", "polygons"):
+        c[f"draw/outline/{kind}"] = outline(kind)
     if features.check("freetype2"):
         font = ImageFont.load_default(24)
         lines = src["text"]
