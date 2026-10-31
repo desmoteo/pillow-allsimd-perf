@@ -3,7 +3,8 @@
 #
 # Usage: ./run.sh [options] local|[user@]HOST
 #
-#   --simd-repo DIR   pillow-simd checkout to build (default: ../pillow-simd)
+#   --simd-repo DIR   Pillow-AllSIMD checkout to build (default: ../pillow-allsimd,
+#                     or ../pillow-simd, its former name)
 #   --ref REF         commit of it to build (default: HEAD)
 #   --name NAME       results/NAME.json (default: the host name)
 #   --title TITLE     machine title on the page
@@ -19,13 +20,13 @@
 #
 # Needs docker (or podman) on the target, and network access there for the
 # first image build. The image holds the other libraries and the released
-# Pillow builds; the pillow-simd builds of REF are compiled in the container
+# Pillow builds; the Pillow-AllSIMD builds of REF are compiled in the container
 # on every run, so it's the commit that is measured, not a stale build.
 
 set -euo pipefail
 cd "$(dirname "$0")"
 
-SIMD_REPO=../pillow-simd REF=HEAD NAME="" TITLE="" CPU=2 SIZE=2560x1600 KEEP=0 TARGET=""
+SIMD_REPO="" REF=HEAD NAME="" TITLE="" CPU=2 SIZE=2560x1600 KEEP=0 TARGET=""
 DETACH=0 FETCH=0 ROUNDS=3
 ONLY=()
 while [ $# -gt 0 ]; do
@@ -41,12 +42,16 @@ while [ $# -gt 0 ]; do
         --keep) KEEP=1; shift ;;
         --detach) DETACH=1; shift ;;
         --fetch) FETCH=1; shift ;;
-        -h|--help) sed -n '2,23p' "$0"; exit 0 ;;
+        -h|--help) sed -n '2,24p' "$0"; exit 0 ;;
         -*) echo "unknown option $1" >&2; exit 2 ;;
         *) TARGET=$1; shift ;;
     esac
 done
-[ -n "$TARGET" ] || { sed -n '2,23p' "$0"; exit 2; }
+[ -n "$TARGET" ] || { sed -n '2,24p' "$0"; exit 2; }
+if [ -z "$SIMD_REPO" ]; then
+    SIMD_REPO=../pillow-allsimd
+    [ -d "$SIMD_REPO" ] || [ ! -d ../pillow-simd ] || SIMD_REPO=../pillow-simd
+fi
 REMOTE_DIR="pillow-simd-perf-run"
 
 if [ $FETCH = 1 ]; then
@@ -96,9 +101,10 @@ for b in "\${builds[@]}"; do
         -C simd=\$b --target /work/variants/\$name . >/work/build-\$name.log 2>&1) \
         || { tail -20 /work/build-\$name.log; exit 1; }
     variants+=(--variant "\$name=/work/variants/\$name")
-    # the main build again in fast mode (Image.set_fast, PILLOW_SIMD_FAST)
+    # the main build again in fast mode (Image.set_fast; PILLOW_SIMD_FAST is
+    # the variable's name before the rename to Pillow-AllSIMD)
     if [ \$b = avx2 ] || [ \$b = neon ]; then
-        variants+=(--variant "\$name-fast=/work/variants/\$name,PILLOW_SIMD_FAST=1")
+        variants+=(--variant "\$name-fast=/work/variants/\$name,PILLOW_ALLSIMD_FAST=1,PILLOW_SIMD_FAST=1")
     fi
 done
 python3 bench/perf.py "\${variants[@]}" --lib opencv --lib vips --lib wand \

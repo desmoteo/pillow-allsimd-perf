@@ -1,7 +1,7 @@
 """Fast-mode Gaussian blur against the exact one for a range of sigmas: times,
 the largest and mean difference, and both errors against a true Gaussian
 (accuracy.py's reference), on the perf.py photo, for the Pillow on sys.path
-(a pillow-simd build with fast mode)."""
+(a Pillow-AllSIMD build with fast mode)."""
 
 import os
 import sys

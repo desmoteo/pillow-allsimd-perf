@@ -223,7 +223,7 @@ def run_worker(kind: str, path: str | None, inputs: Path, args: argparse.Namespa
     env = dict(os.environ, **SINGLE_THREAD_ENV)
     if path:
         # PATH[,KEY=VALUE...]: the variant's build and its environment, e.g.
-        # PILLOW_SIMD_FAST=1 for the same build in fast mode
+        # PILLOW_ALLSIMD_FAST=1 for the same build in fast mode
         path, *extra = path.split(",")
         env["PYTHONPATH"] = path
         env.update(kv.split("=", 1) for kv in extra)

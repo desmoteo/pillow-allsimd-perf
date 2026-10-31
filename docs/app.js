@@ -6,8 +6,8 @@ const ISA_ORDER = ["scalar", "sse4", "avx2", "avxvnni", "neon"];
 const FAMILIES = [
   { id: "upstream", label: "Pillow 13.0", color: "--upstream" },
   { id: "release", label: "Pillow-SIMD 12.1 release", color: "--release" },
-  { id: "branch", label: "Pillow-SIMD 13 (this branch)", color: "--branch" },
-  { id: "fast", label: "Pillow-SIMD 13 fast mode", color: "--fast" },
+  { id: "branch", label: "Pillow-AllSIMD 13", color: "--branch" },
+  { id: "fast", label: "Pillow-AllSIMD 13 fast mode", color: "--fast" },
   { id: "opencv", label: "OpenCV", color: "--other" },
   { id: "vips", label: "libvips", color: "--other" },
   { id: "wand", label: "ImageMagick", color: "--other" },
@@ -33,11 +33,11 @@ function el(tag, attrs = {}, ...kids) {
 function describe(name, v) {
   let m;
   if ((m = name.match(/^branch-(\w+)-fast$/))) {
-    return { label: `Pillow-SIMD 13 ${ISA[m[1]] || m[1]} fast`, fam: "fast", order: 30 + ISA_ORDER.indexOf(m[1]) };
+    return { label: `Pillow-AllSIMD 13 ${ISA[m[1]] || m[1]} fast`, fam: "fast", order: 30 + ISA_ORDER.indexOf(m[1]) };
   }
   if (name.startsWith("branch-")) {
     const isa = name.slice(7);
-    return { label: `Pillow-SIMD 13 ${ISA[isa] || isa}`, fam: "branch", order: 20 + ISA_ORDER.indexOf(isa) };
+    return { label: `Pillow-AllSIMD 13 ${ISA[isa] || isa}`, fam: "branch", order: 20 + ISA_ORDER.indexOf(isa) };
   }
   if ((m = name.match(/^pillow-simd-(\d+\.\d+\.\d+)(?:\.post\d+)?-(\w+)$/))) {
     return { label: `Pillow-SIMD ${m[1]} ${ISA[m[2]] || m[2]}`, fam: "release", order: 10 + ISA_ORDER.indexOf(m[2]) };
@@ -310,7 +310,7 @@ function renderMeta() {
     el("strong", { text: d.title }),
     ` · ${m.machine}, ${m.Vendor_ID || m["Vendor ID"] || ""} · Python ${m.python}, GCC ${m.gcc} · `,
     `branch ${m.branch} @ `,
-    el("a", { href: `https://github.com/desmoteo/pillow-simd/commit/${m.commit}`, text: m.commit }),
+    el("a", { href: `https://github.com/desmoteo/pillow-allsimd/commit/${m.commit}`, text: m.commit }),
     ` · ${d.size[0]}×${d.size[1]} · measured ${d.date}`,
   );
   const legend = document.getElementById("legend");

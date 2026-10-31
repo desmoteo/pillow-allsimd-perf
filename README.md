@@ -1,10 +1,12 @@
-# Pillow-SIMD performance
+# Pillow-AllSIMD performance
 
-Benchmarks of [Pillow-SIMD](https://github.com/desmoteo/pillow-simd) against
+Benchmarks of [Pillow-AllSIMD](https://github.com/desmoteo/pillow-allsimd), a
+fork of [Pillow-SIMD](https://github.com/uploadcare/pillow-simd) and
+[Pillow](https://github.com/python-pillow/Pillow), against
 Pillow, the last Pillow-SIMD release, OpenCV, libvips and ImageMagick on x86-64
 and arm64, in the spirit of [pillow-perf](https://python-pillow.org/pillow-perf/).
 
-Results: **https://desmoteo.github.io/pillow-simd-perf/**
+Results: **https://desmoteo.github.io/pillow-allsimd-perf/**
 
 ## What is compared
 
@@ -12,9 +14,9 @@ Results: **https://desmoteo.github.io/pillow-simd-perf/**
 |---|---|---|
 | Pillow 13.0.0 (PyPI wheel) | yes | yes |
 | Pillow-SIMD 12.1.1.post0 (last release), SSE4 and AVX2 | yes | no, it has no arm64 code |
-| Pillow-SIMD 13 (`simd/pillow-13`), scalar, SSE4, AVX2, AVX-VNNI | yes, AVX-VNNI if the CPU has it | |
-| Pillow-SIMD 13 (`simd/pillow-13`), scalar and NEON | | yes |
-| Pillow-SIMD 13 AVX2 or NEON in fast mode (`PILLOW_SIMD_FAST=1`) | yes | yes |
+| Pillow-AllSIMD 13 (`simd/pillow-13`), scalar, SSE4, AVX2, AVX-VNNI | yes, AVX-VNNI if the CPU has it | |
+| Pillow-AllSIMD 13 (`simd/pillow-13`), scalar and NEON | | yes |
+| Pillow-AllSIMD 13 AVX2 or NEON in fast mode (`PILLOW_ALLSIMD_FAST=1`) | yes | yes |
 | OpenCV (opencv-python-headless) | yes | yes |
 | libvips (Debian, through pyvips) | yes | yes |
 | ImageMagick 7 (Debian, through Wand) | yes | yes |
@@ -30,10 +32,10 @@ Every library runs single-threaded on the same 2560x1600 inputs.
 Docker (or Podman) is the only requirement on the machine that runs the benchmark.
 
 ```bash
-git clone https://github.com/desmoteo/pillow-simd
-git clone https://github.com/desmoteo/pillow-simd-perf
-git -C pillow-simd checkout simd/pillow-13
-cd pillow-simd-perf
+git clone https://github.com/desmoteo/pillow-allsimd
+git clone https://github.com/desmoteo/pillow-allsimd-perf
+git -C pillow-allsimd checkout simd/pillow-13
+cd pillow-allsimd-perf
 ./run.sh local                        # this machine, CPU 2
 ./run.sh --cpu 2 user@arm64-host      # a remote machine over SSH
 ./run.sh --only scale/RGB local       # a subset
@@ -42,7 +44,7 @@ python3 -m http.server -d docs        # look at the page
 ```
 
 `run.sh` builds the image in `docker/` once. Each run then compiles the chosen
-pillow-simd commit (`--ref`, default `HEAD`) in the container and runs
+Pillow-AllSIMD commit (`--ref`, default `HEAD`) in the container and runs
 `bench/perf.py`, which writes `results/<name>.json`.
 
 ## Layout

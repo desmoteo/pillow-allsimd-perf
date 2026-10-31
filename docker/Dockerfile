@@ -1,5 +1,5 @@
 # Benchmark image: the competing libraries and the released Pillow builds.
-# The Pillow-SIMD builds of the branch under test are compiled at run time
+# The Pillow-AllSIMD builds of the branch under test are compiled at run time
 # (run.sh), so this image only changes when a library version changes.
 FROM python:3.12-slim-trixie
 
