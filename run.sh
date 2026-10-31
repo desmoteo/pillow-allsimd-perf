@@ -70,6 +70,11 @@ fi
 COMMIT=$(git -C "$SIMD_REPO" rev-parse --short "$REF")
 BRANCH=$(git -C "$SIMD_REPO" rev-parse --abbrev-ref "$REF" 2>/dev/null || echo "$REF")
 [ "$BRANCH" = HEAD ] && BRANCH=$(git -C "$SIMD_REPO" rev-parse --abbrev-ref HEAD)
+# a commit hash has no branch name: the checkout's branch, if it has the commit
+if [ -z "$BRANCH" ]; then
+    BRANCH=$(git -C "$SIMD_REPO" rev-parse --abbrev-ref HEAD)
+    git -C "$SIMD_REPO" merge-base --is-ancestor "$REF" HEAD || BRANCH=$COMMIT
+fi
 [ -n "$NAME" ] || NAME=$([ "$TARGET" = local ] && hostname -s || echo "${TARGET#*@}")
 
 STAGE=$(mktemp -d)
