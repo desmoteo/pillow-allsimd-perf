@@ -1,0 +1,11 @@
+sigma  exact ms  fast ms  fast-exact max/mean   exact vs ref           fast vs ref
+  0.5     18.45     4.57    3 / 0.705   max   3  mean 0.667  differ  59.1% max   1  mean 0.200  differ  20.0%
+    1     18.73     5.77    3 / 0.512   max   2  mean 0.501  differ  49.0% max   1  mean 0.137  differ  13.7%
+  1.5     21.86     8.24    2 / 0.227   max   2  mean 0.196  differ  19.6% max   1  mean 0.111  differ  11.1%
+    2     22.31     8.52    2 / 0.223   max   2  mean 0.196  differ  19.6% max   1  mean 0.094  differ   9.4%
+    3     26.66    13.34    1 / 0.185   max   1  mean 0.175  differ  17.5% max   1  mean 0.075  differ   7.5%
+    4     26.60    16.89    2 / 0.167   max   1  mean 0.136  differ  13.6% max   1  mean 0.099  differ   9.9%
+    5     26.80    21.88    1 / 0.127   -                        -
+    6     27.11    26.77    1 / 0.149   -                        -
+    8     26.74    27.58    0 / 0.000   -                        -
+   10     27.05    27.06    0 / 0.000   -                        -

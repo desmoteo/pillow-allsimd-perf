@@ -11,6 +11,7 @@ win, and how accurate each library's kernels are. They use the same inputs as
 | `parts.py [names]` | blur and resize split into their passes (horizontal only, vertical only, both), premultiply and unpremultiply |
 | `accuracy.py [names]` | time and error against float64 references of the same operation (Gaussian, box, YCbCr both ways, HSV, bilinear upscale, rotation) for Pillow and for OpenCV with `ALGO_HINT_ACCURATE` and `ALGO_HINT_APPROX` |
 | `vipsacc.py` | libvips `gaussblur` against the same references, with its vector path on, or off with `VIPS_NOVECTOR=1` |
+| `gaussfast.py` | pillow-simd's fast-mode Gaussian against the exact one, sigma 0.5 to 10: times, difference, error against a true Gaussian |
 | `drawprof.py` | the drawing cases split: polygons at full size and scaled down, lines 1 and 5 px wide, text and its parts, a profile of text drawing |
 
 Errors are in 8-bit levels against the reference rounded to the nearest
