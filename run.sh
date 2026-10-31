@@ -96,6 +96,10 @@ for b in "\${builds[@]}"; do
         -C simd=\$b --target /work/variants/\$name . >/work/build-\$name.log 2>&1) \
         || { tail -20 /work/build-\$name.log; exit 1; }
     variants+=(--variant "\$name=/work/variants/\$name")
+    # the main build again in fast mode (Image.set_fast, PILLOW_SIMD_FAST)
+    if [ \$b = avx2 ] || [ \$b = neon ]; then
+        variants+=(--variant "\$name-fast=/work/variants/\$name,PILLOW_SIMD_FAST=1")
+    fi
 done
 python3 bench/perf.py "\${variants[@]}" --lib opencv --lib vips --lib wand \
     --size $SIZE --rounds $ROUNDS --title "$TITLE" --extra "branch=$BRANCH" --extra "commit=$COMMIT" \

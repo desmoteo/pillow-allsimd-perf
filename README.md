@@ -14,6 +14,7 @@ Results: **https://desmoteo.github.io/pillow-simd-perf/**
 | Pillow-SIMD 12.1.1.post0 (last release), SSE4 and AVX2 | yes | no, it has no arm64 code |
 | Pillow-SIMD 13 (`simd/pillow-13`), scalar, SSE4, AVX2, AVX-VNNI | yes, AVX-VNNI if the CPU has it | |
 | Pillow-SIMD 13 (`simd/pillow-13`), scalar and NEON | | yes |
+| Pillow-SIMD 13 AVX2 or NEON in fast mode (`PILLOW_SIMD_FAST=1`) | yes | yes |
 | OpenCV (opencv-python-headless) | yes | yes |
 | libvips (Debian, through pyvips) | yes | yes |
 | ImageMagick 7 (Debian, through Wand) | yes | yes |
