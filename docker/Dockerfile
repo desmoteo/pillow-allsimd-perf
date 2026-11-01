@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND=noninteractive PIP_DISABLE_PIP_VERSION_CHECK=1 \
 # ImageMagick for pyvips and Wand; util-linux for taskset.
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential pkg-config curl ca-certificates util-linux \
-        libjpeg62-turbo-dev zlib1g-dev libpng-dev libtiff-dev libwebp-dev \
+        libjpeg62-turbo-dev zlib1g-dev libdeflate-dev libpng-dev libtiff-dev libwebp-dev \
         libfreetype-dev liblcms2-dev libopenjp2-7-dev \
         libvips-dev libmagickwand-dev \
     && rm -rf /var/lib/apt/lists/*
