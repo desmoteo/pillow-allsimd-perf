@@ -23,7 +23,9 @@
       NEON build again in fast mode, the default since October 2026: kernels whose pixels
       may differ from Pillow's by a few levels (<a href="https://github.com/desmoteo/pillow-allsimd/blob/simd/pillow-13/SIMD_FAST_KERNELS.md">the
       fast kernels</a>); operations without one run the exact kernels, as in the exact
-      build above it.</p>
+      build above it. <em>Wheel</em>, on x86-64, is the build that
+      <code>pip install pillow-allsimd</code> gives: every instruction set in one module,
+      the highest the CPU has chosen at import, in fast mode.</p>
   </header>
 
   <div class="controls" role="region" aria-label="Filters">
@@ -61,13 +63,15 @@
         The Jetson runs at a fixed clock.</li>
       <li>The Pillow-AllSIMD builds are compiled in the container from the commit named
         under each machine, one build per instruction set on x86; its x86-64 wheels hold
-        the SSE4.1, AVX2 and AVX-VNNI kernels in one build and pick at import. Since
-        13.0.0.post3 they compress PNG with libdeflate, as the wheels do, where Pillow and
-        Pillow-SIMD use zlib: that, not the row filters, is the PNG encoding case's gain.</li>
-      <li>The quantizers allocate two arrays the size of the image on every call, and
-        whether the allocator recycles them depends on what the process did before, so the
-        fast-octree case can differ between builds of the same code by more than the other
-        cases do.</li>
+        the SSE4.1, AVX2 and AVX-VNNI kernels in one build and pick at import, with the
+        rest of the library compiled for baseline x86-64: the <em>wheel</em> bar measures
+        that build. Since 13.0.0.post3 the builds compress PNG with libdeflate, as the
+        wheels do, where Pillow and Pillow-SIMD use zlib, and since November 2026 they
+        inflate it with libdeflate too: that, not the row filters, is most of the PNG
+        cases' gain.</li>
+      <li>The median-cut and maximum-coverage quantizers allocate two arrays the size of
+        the image on every call, and whether the allocator recycles them depends on what
+        the process did before. The fast octree no longer does.</li>
       <li>libvips is lazy, so its cases end by computing the result into memory, and its
         operation cache is off. ImageMagick modifies images in place, so each of its runs
         works on a clone, which costs about what Pillow spends allocating its output.</li>
