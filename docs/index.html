@@ -59,6 +59,15 @@
         library ran during a slow spell looked about twice as slow. Under the
         <code>balanced</code> profile it kept dropping to 2.3&nbsp;GHz even with turbo off.
         The Jetson runs at a fixed clock.</li>
+      <li>The Pillow-AllSIMD builds are compiled in the container from the commit named
+        under each machine, one build per instruction set on x86; its x86-64 wheels hold
+        the SSE4.1, AVX2 and AVX-VNNI kernels in one build and pick at import. Since
+        13.0.0.post3 they compress PNG with libdeflate, as the wheels do, where Pillow and
+        Pillow-SIMD use zlib: that, not the row filters, is the PNG encoding case's gain.</li>
+      <li>The quantizers allocate two arrays the size of the image on every call, and
+        whether the allocator recycles them depends on what the process did before, so the
+        fast-octree case can differ between builds of the same code by more than the other
+        cases do.</li>
       <li>libvips is lazy, so its cases end by computing the result into memory, and its
         operation cache is off. ImageMagick modifies images in place, so each of its runs
         works on a clone, which costs about what Pillow spends allocating its output.</li>
