@@ -113,6 +113,17 @@ for b in "\${builds[@]}"; do
         variants+=(--variant "\$name-fast=/work/variants/\$name,PILLOW_ALLSIMD_FAST=1,PILLOW_SIMD_FAST=1")
     fi
 done
+# the x86-64 wheel's build: the SSE4.1, AVX2 and AVX-VNNI kernels in one
+# module, chosen at import, with Pillow's own files compiled for baseline
+# x86-64; in fast mode, as installed
+if [ "\$(uname -m)" = x86_64 ] && grep -q '"dispatch"' simd-src/setup.py; then
+    echo "==> building branch-wheel" >&2
+    rm -rf simd-src/build
+    (cd simd-src && python3 -m pip install -q --no-deps --no-build-isolation \
+        -C simd=dispatch --target /work/variants/branch-wheel . >/work/build-branch-wheel.log 2>&1) \
+        || { tail -20 /work/build-branch-wheel.log; exit 1; }
+    variants+=(--variant "branch-wheel=/work/variants/branch-wheel,PILLOW_ALLSIMD_FAST=1,PILLOW_SIMD_FAST=1")
+fi
 python3 bench/perf.py "\${variants[@]}" --lib opencv --lib vips --lib wand \
     --size $SIZE --rounds $ROUNDS --title "$TITLE" --extra "branch=$BRANCH" --extra "commit=$COMMIT" \
     ${ONLY[@]+"${ONLY[@]}"} --out /work/results.json

@@ -17,6 +17,7 @@ Results: **https://desmoteo.github.io/pillow-allsimd-perf/**
 | Pillow-AllSIMD 13 (`simd/pillow-13`) in exact mode (`PILLOW_ALLSIMD_FAST=0`), scalar, SSE4, AVX2, AVX-VNNI | yes, AVX-VNNI if the CPU has it | |
 | Pillow-AllSIMD 13 (`simd/pillow-13`) in exact mode, scalar and NEON | | yes |
 | Pillow-AllSIMD 13 AVX2 or NEON in fast mode (`PILLOW_ALLSIMD_FAST=1`), its default since October 2026 | yes | yes |
+| Pillow-AllSIMD 13 as its x86-64 wheels are built (`-C simd=dispatch`: SSE4.1, AVX2 and AVX-VNNI kernels in one module, chosen at import), in fast mode | yes | no, NEON is the baseline there |
 | OpenCV (opencv-python-headless) | yes | yes |
 | libvips (Debian, through pyvips) | yes | yes |
 | ImageMagick 7 (Debian, through Wand) | yes | yes |

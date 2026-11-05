@@ -32,6 +32,10 @@ function el(tag, attrs = {}, ...kids) {
 /* Variant name -> label, family and sort key. */
 function describe(name, v) {
   let m;
+  if (name === "branch-wheel") {
+    // the x86-64 wheel: every instruction set in one build, chosen at import
+    return { label: "Pillow-AllSIMD 13 wheel (fast)", fam: "fast", order: 39 };
+  }
   if ((m = name.match(/^branch-(\w+)-fast$/))) {
     return { label: `Pillow-AllSIMD 13 ${ISA[m[1]] || m[1]} fast`, fam: "fast", order: 30 + ISA_ORDER.indexOf(m[1]) };
   }
