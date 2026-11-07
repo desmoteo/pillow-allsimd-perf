@@ -78,6 +78,7 @@ pre { background: var(--surface); border: 1px solid var(--ring); border-radius: 
 header.top { padding: 32px 0 8px; }
 header.top h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.01em; }
 header.top p { margin: 0; color: var(--text-2); max-width: 70ch; }
+header.top p.install { margin-top: 0.6em; color: var(--text); }
 
 .controls {
   position: sticky;
