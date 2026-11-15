@@ -34,6 +34,6 @@ docker run --rm --cpuset-cpus=2 --user $(id -u):$(id -g) -e HOME=/tmp \
 
 `results-2026-10-31/` holds the outputs the documents quote. x86: the Intel
 Core Ultra 9 285H (performance profile, turbo off), AVX2 builds of
-d9203c783 (`gapcheck`, `parts`) and 28b55224b (`accuracy`, `vipsacc`,
+1650d8114 (`gapcheck`, `parts`) and 2818661ee (`accuracy`, `vipsacc`,
 `drawprof`), which differ only in the kernel filters. arm64: the Jetson
-Orin, the NEON build of 28b55224b.
+Orin, the NEON build of 2818661ee.

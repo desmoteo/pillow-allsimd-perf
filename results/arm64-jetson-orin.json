@@ -14,7 +14,7 @@
   "Flags": "fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg",
   "gcc": "14.2.0",
   "branch": "simd/pillow-13",
-  "commit": "cde4a66c3"
+  "commit": "a9dc41ac2"
  },
  "suites": [
   {
